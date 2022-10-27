@@ -1,0 +1,76 @@
+{
+  "name": "create-wagmi",
+  "description": "CLI to scaffold a wagmi app",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "WAGMIT",
+  "bin": {
+    "create-wagmi": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "changeset:release": "pnpm build && changeset publish",
+    "changeset:version": "changeset version && pnpm install --lockfile-only",
+    "dev": "tsup --watch",
+    "lint": "eslint . --cache",
+    "lint:fix": "pnpm lint --fix",
+    "lint:format": "prettier --write",
+    "prepare": "npx simple-git-hooks",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "chalk": "^5.1.0",
+    "cpy": "^9.0.1",
+    "create-wagmi": "^0.0.1",
+    "cross-spawn": "^7.0.3",
+    "detect-package-manager": "^2.0.1",
+    "execa": "^6.1.0",
+    "fs-extra": "^10.1.0",
+    "ora": "^6.1.2",
+    "prompts": "^2.4.2",
+    "validate-npm-package-name": "^4.0.0"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.4",
+    "@changesets/cli": "^2.22.0",
+    "@types/eslint": "^8.4.6",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.11.7",
+    "@types/prompts": "^2.4.1",
+    "@types/validate-npm-package-name": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.1",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "pnpm lint:fix"
+    ],
+    "*.{json,yml}": [
+      "pnpm lint:format"
+    ]
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wagmi-dev/wagmi.git",
+    "directory": "packages/create-wagmi"
+  }
+}
