@@ -5,12 +5,7 @@ import { WagmiConfig } from 'wagmi'
 import { App } from './App'
 import reportWebVitals from './reportWebVitals'
 import { client } from './wagmi'
-import { Buffer } from 'buffer'
-
-// polyfill Buffer for client
-if (!window.Buffer) {
-  window.Buffer = Buffer
-}
+import './polyfills.ts'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
