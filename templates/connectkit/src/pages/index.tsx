@@ -1,5 +1,6 @@
 import { ConnectKitButton } from 'connectkit'
 import { useAccount } from 'wagmi'
+
 import { Account } from '../components'
 
 function Page() {

@@ -1,34 +1,11 @@
-import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import '@rainbow-me/rainbowkit/styles.css'
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
 import type { AppProps } from 'next/app'
 import NextHead from 'next/head'
 import * as React from 'react'
+import { WagmiConfig } from 'wagmi'
 
-import {
-  WagmiConfig,
-  configureChains,
-  createClient,
-  defaultChains,
-} from 'wagmi'
-import { alchemyProvider } from 'wagmi/providers/alchemy'
-import { publicProvider } from 'wagmi/providers/public'
-
-const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
-  alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY }),
-  publicProvider(),
-])
-
-const { connectors } = getDefaultWallets({
-  appName: 'My wagmi + RainbowKit App',
-  chains
-});
-
-const client = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-  webSocketProvider,
-})
+import { chains, client } from '../wagmi'
 
 function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = React.useState(false)
