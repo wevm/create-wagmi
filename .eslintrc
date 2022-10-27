@@ -37,6 +37,7 @@
       }
     ],
     "@typescript-eslint/no-var-requires": "off",
+    "import/no-named-as-default-member": "off",
     // `eslint-plugin-import`
     // https://github.com/benmosher/eslint-plugin-import
     "import/order": [
@@ -58,21 +59,6 @@
       }
     ]
   },
-  "overrides": [
-    {
-      "files": "**/*.mdx/**",
-      "extends": ["plugin:mdx/recommended"],
-      "rules": {
-        "import/no-anonymous-default-export": "off",
-        "react/display-name": "off",
-        "react/jsx-no-undef": "off",
-        "no-undef": "off"
-      },
-      "settings": {
-        "mdx/code-blocks": true
-      }
-    }
-  ],
   "ignorePatterns": [
     "CHANGELOG.md",
     "build",
