@@ -37,7 +37,9 @@ jobs:
         uses: actions/cache@v3
         id: cache-node-modules
         with:
-          path: node_modules
+          path: |
+            node_modules
+            templates/**/node_modules
           key: modules-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Install Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
@@ -64,7 +66,9 @@ jobs:
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            templates/**/node_modules
           key: modules-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Lint code
         run: pnpm lint
@@ -92,7 +96,9 @@ jobs:
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            templates/**/node_modules
           key: modules-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Build
         run: pnpm build
