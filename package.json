@@ -22,7 +22,6 @@
     "cac": "^6.7.14",
     "chalk": "^5.1.0",
     "cpy": "^9.0.1",
-    "create-wagmi": "^0.0.1",
     "cross-spawn": "^7.0.3",
     "detect-package-manager": "^2.0.1",
     "execa": "^6.1.0",

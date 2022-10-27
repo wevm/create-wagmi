@@ -3,7 +3,6 @@
 import { cac } from 'cac'
 import chalk from 'chalk'
 import cpy from 'cpy'
-import { detect } from 'detect-package-manager'
 import { execa } from 'execa'
 import fs from 'fs-extra'
 // eslint-disable-next-line import/no-named-as-default
@@ -11,7 +10,7 @@ import prompts from 'prompts'
 
 import { name, version } from '../package.json'
 import { templates } from './templates'
-import { validatePackageName } from './utils'
+import { detectPackageManager, validatePackageName } from './utils'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -160,7 +159,7 @@ void (async () => {
       ? 'yarn'
       : options.npm
       ? 'npm'
-      : await detect()
+      : await detectPackageManager()
 
     log(
       chalk.cyan(
