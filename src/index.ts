@@ -10,37 +10,10 @@ import fs from 'fs-extra'
 import prompts from 'prompts'
 
 import { name, version } from '../package.json'
+import { templates } from './templates'
 import { validatePackageName } from './utils'
 import path from 'path'
 import { fileURLToPath } from 'url'
-
-const templates = [
-  {
-    name: 'next',
-    title: 'Next.js',
-    description: 'Create a Next.js wagmi project',
-  },
-  {
-    name: 'connectkit',
-    title: 'Next.js + ConnectKit',
-    description: 'Create a Next.js wagmi project with ConnectKit included',
-  },
-  {
-    name: 'rainbowkit',
-    title: 'Next.js + RainbowKit',
-    description: 'Create a Next.js wagmi project with RainbowKit included',
-  },
-  {
-    name: 'vite-react',
-    title: 'Vite',
-    description: 'Create a Vite React wagmi project',
-  },
-  {
-    name: 'create-react-app',
-    title: 'Create React App',
-    description: 'Create a Create React App wagmi project',
-  },
-]
 
 class CLIError extends Error {}
 
