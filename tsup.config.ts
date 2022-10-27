@@ -6,7 +6,7 @@ export default defineConfig({
   bundle: true,
   clean: true,
   entry: ['src/index.ts'],
-  format: ['esm'],
   external: Object.keys(dependencies),
+  format: ['esm'],
   platform: 'node',
 })
