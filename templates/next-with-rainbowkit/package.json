@@ -1,5 +1,5 @@
 {
-  "name": "wagmi-template-connectkit",
+  "name": "wagmi-template-next-with-rainbowkit",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "connectkit": "^0.0.2",
+    "@rainbow-me/rainbowkit": "^0.7.1",
     "ethers": "^5.7.0",
     "next": "^12.2.0",
     "react": "^18.1.0",

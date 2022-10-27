@@ -166,7 +166,7 @@ void (async () => {
       chalk.cyan(
         `📦 Installing dependencies with ${chalk.bold(
           packageManager,
-        )}. This may take a minute or so...`,
+        )}. This may take a minute or so…`,
       ),
     )
     log()
@@ -195,7 +195,7 @@ void (async () => {
     ////////////////////////////////////////////////////////////////
 
     log()
-    log(chalk.green(`🔥 Your wagmi app has been set up!`))
+    log(chalk.green(`🔥 Your wagmi app was set up!`))
     log()
     log(
       chalk.cyan(

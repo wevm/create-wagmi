@@ -5,12 +5,12 @@ export const templates = [
     description: 'Next.js wagmi project',
   },
   {
-    name: 'connectkit',
+    name: 'next-with-connectkit',
     title: 'Next.js + ConnectKit',
     description: 'Next.js wagmi project with ConnectKit included',
   },
   {
-    name: 'rainbowkit',
+    name: 'next-with-rainbowkit',
     title: 'Next.js + RainbowKit',
     description: 'Next.js wagmi project with RainbowKit included',
   },
