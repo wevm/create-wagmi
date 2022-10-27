@@ -16,7 +16,6 @@ importers:
       cac: ^6.7.14
       chalk: ^5.1.0
       cpy: ^9.0.1
-      create-wagmi: ^0.0.1
       cross-spawn: ^7.0.3
       detect-package-manager: ^2.0.1
       eslint: 8.17.0
@@ -40,7 +39,6 @@ importers:
       cac: 6.7.14
       chalk: 5.1.2
       cpy: 9.0.1
-      create-wagmi: 'link:'
       cross-spawn: 7.0.3
       detect-package-manager: 2.0.1
       execa: 6.1.0
@@ -69,35 +67,6 @@ importers:
       prettier: 2.7.1
       simple-git-hooks: 2.8.1
       tsup: 6.3.0_typescript@4.8.4
-      typescript: 4.8.4
-
-  templates/connectkit:
-    specifiers:
-      '@types/node': ^17.0.31
-      '@types/react': ^18.0.9
-      '@types/react-dom': ^18.0.3
-      connectkit: ^0.0.2
-      eslint: ^8.15.0
-      eslint-config-next: ^12.1.6
-      ethers: ^5.7.0
-      next: ^12.2.0
-      react: ^18.1.0
-      react-dom: ^18.1.0
-      typescript: ^4.6.4
-      wagmi: ^0.7.2
-    dependencies:
-      connectkit: 0.0.2_qqnyselq6ulegset4uainfngby
-      ethers: 5.7.2
-      next: 12.3.1_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      wagmi: 0.7.7_ir5rj4sfbt34e63yhlgyn6mx7a
-    devDependencies:
-      '@types/node': 17.0.45
-      '@types/react': 18.0.23
-      '@types/react-dom': 18.0.7
-      eslint: 8.17.0
-      eslint-config-next: 12.3.1_vhsckgnokn2tf7m5xkrurmvfv4
       typescript: 4.8.4
 
   templates/create-react-app:
@@ -161,7 +130,36 @@ importers:
       eslint-config-next: 12.3.1_vhsckgnokn2tf7m5xkrurmvfv4
       typescript: 4.8.4
 
-  templates/rainbowkit:
+  templates/next-with-connectkit:
+    specifiers:
+      '@types/node': ^17.0.31
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      connectkit: ^0.0.2
+      eslint: ^8.15.0
+      eslint-config-next: ^12.1.6
+      ethers: ^5.7.0
+      next: ^12.2.0
+      react: ^18.1.0
+      react-dom: ^18.1.0
+      typescript: ^4.6.4
+      wagmi: ^0.7.2
+    dependencies:
+      connectkit: 0.0.2_qqnyselq6ulegset4uainfngby
+      ethers: 5.7.2
+      next: 12.3.1_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      wagmi: 0.7.7_ir5rj4sfbt34e63yhlgyn6mx7a
+    devDependencies:
+      '@types/node': 17.0.45
+      '@types/react': 18.0.23
+      '@types/react-dom': 18.0.7
+      eslint: 8.17.0
+      eslint-config-next: 12.3.1_vhsckgnokn2tf7m5xkrurmvfv4
+      typescript: 4.8.4
+
+  templates/next-with-rainbowkit:
     specifiers:
       '@rainbow-me/rainbowkit': ^0.7.1
       '@types/node': ^17.0.31
@@ -197,7 +195,6 @@ importers:
       '@vitejs/plugin-react': ^2.1.0
       buffer: ^6.0.3
       ethers: ^5.7.0
-      events: ^3.3.0
       process: ^0.11.10
       react: ^18.1.0
       react-dom: ^18.1.0
@@ -208,7 +205,6 @@ importers:
     dependencies:
       buffer: 6.0.3
       ethers: 5.7.2
-      events: 3.3.0
       process: 0.11.10
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
