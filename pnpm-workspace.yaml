@@ -1,3 +1,4 @@
 link-workspace-packages: true
 packages:
+  - '.'
   - 'templates/*'
