@@ -1,2 +1,2 @@
 export { detectPackageManager } from './detectPackageManager'
-export { validatePackageName } from './validatePackageName'
+export { validatePackageName } from './validate'

@@ -1,6 +1,6 @@
 {
   "name": "create-wagmi",
-  "description": "CLI to scaffold a wagmi app",
+  "description": "Create wagmi apps with one command",
   "version": "0.0.1",
   "type": "module",
   "license": "WAGMIT",
@@ -20,19 +20,21 @@
   },
   "dependencies": {
     "cac": "^6.7.14",
-    "chalk": "^5.1.0",
     "cpy": "^9.0.1",
     "cross-spawn": "^7.0.3",
     "detect-package-manager": "^2.0.1",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
     "ora": "^6.1.2",
+    "picocolors": "^1.0.0",
     "prompts": "^2.4.2",
+    "update-check": "^1.5.4",
     "validate-npm-package-name": "^4.0.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.22.0",
+    "@types/cross-spawn": "^6.0.2",
     "@types/eslint": "^8.4.6",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.7",
@@ -45,8 +47,8 @@
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "simple-git-hooks": "^2.8.1",
@@ -70,7 +72,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wagmi-dev/wagmi.git",
-    "directory": "packages/create-wagmi"
+    "url": "https://github.com/wagmi-dev/wagmi.git"
   }
 }
