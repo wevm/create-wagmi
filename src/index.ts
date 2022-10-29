@@ -218,7 +218,7 @@ async function notifyUpdate() {
       const packageManager = await getPackageManager()
       const updateMessage =
         packageManager === 'pnpm'
-          ? 'pnpm add -g create-next-app'
+          ? `pnpm add -g ${packageJson.name}`
           : packageManager === 'yarn'
           ? `yarn global add ${packageJson.name}`
           : `npm i -g ${packageJson.name}`
