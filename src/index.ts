@@ -225,7 +225,7 @@ async function notifyUpdate() {
 
       log(
         pico.bold(
-          pico.yellow('A new version of `create-wagmi` is available!') +
+          pico.yellow('A new version of `{packageJson.name}` is available!') +
             '\n' +
             'You can update by running: ' +
             pico.cyan(updateMessage) +
