@@ -9,20 +9,22 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
+    "ethers": "^5.7.2",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "util": "^0.12.4",
+    "wagmi": "^0.7.8"
+  },
+  "devDependencies": {
     "@types/jest": "^29.0.1",
     "@types/node": "^16.11.33",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
-    "buffer": "^6.0.3",
-    "ethers": "^5.7.0",
-    "events": "^3.3.0",
-    "process": "^0.11.10",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",
-    "typescript": "^4.6.4",
-    "util": "^0.12.4",
-    "wagmi": "^0.7.2",
+    "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
   "browserslist": {
