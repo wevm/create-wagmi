@@ -221,7 +221,7 @@ async function notifyUpdate() {
           ? 'pnpm add -g create-next-app'
           : packageManager === 'yarn'
           ? 'yarn global add create-next-app'
-          : 'npm i -g create-next-app'
+          : `npm i -g ${packageJson.name}`
 
       log(
         pico.bold(
