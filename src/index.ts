@@ -220,7 +220,7 @@ async function notifyUpdate() {
         packageManager === 'pnpm'
           ? 'pnpm add -g create-next-app'
           : packageManager === 'yarn'
-          ? 'yarn global add create-next-app'
+          ? `yarn global add ${packageJson.name}`
           : `npm i -g ${packageJson.name}`
 
       log(
