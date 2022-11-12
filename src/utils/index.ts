@@ -1,7 +1,7 @@
 export { getPackageManager } from './getPackageManager'
 export { notifyUpdate } from './notifyUpdate'
 export {
-  validatePackageName,
+  validateProjectName,
   validateTemplateName,
   ValidationError,
 } from './validate'

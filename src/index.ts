@@ -13,7 +13,7 @@ import {
   ValidationError,
   getPackageManager,
   notifyUpdate,
-  validatePackageName,
+  validateProjectName,
   validateTemplateName,
 } from './utils'
 import path from 'path'
@@ -44,12 +44,12 @@ async function run() {
 
   const __dirname = fileURLToPath(new URL('.', import.meta.url))
   const templatesPath = path.join(__dirname, '..', 'templates')
-  const template = options.template || options.t
+  let templateName = options.template || options.t
 
   // Validate template if provided
   let templateValidation = await validateTemplateName({
     isNameRequired: false,
-    name: template,
+    templateName,
     templatesPath,
   })
   if (!templateValidation.valid) throw new ValidationError(templateValidation)
@@ -69,9 +69,9 @@ async function run() {
       message: 'What is your project named?',
       type: 'text',
       async validate(projectName) {
-        const validation = await validatePackageName({
-          name: projectName,
-          path: projectName,
+        const validation = await validateProjectName({
+          projectName,
+          projectPath: projectName,
         })
         if (!validation.valid) return validation.message
         return true
@@ -82,16 +82,15 @@ async function run() {
   }
 
   // Validate project name
-  const nameValidation = await validatePackageName({
-    name: projectName,
-    path: projectPath,
+  const nameValidation = await validateProjectName({
+    projectName,
+    projectPath,
   })
   if (!nameValidation.valid) throw new ValidationError(nameValidation)
 
   // Extract template name from CLI or prompt
-  const templateName =
-    template ??
-    (
+  if (!templateName) {
+    templateName = (
       await prompts({
         name: 'templateName',
         message: 'What template would you like to use?',
@@ -99,10 +98,11 @@ async function run() {
         choices: templates.map(({ name, ...t }) => ({ ...t, value: name })),
       })
     ).templateName
+  }
 
   // Validate template name
   templateValidation = await validateTemplateName({
-    name: templateName,
+    templateName,
     templatesPath,
   })
   if (!templateValidation.valid) throw new ValidationError(templateValidation)

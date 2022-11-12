@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import pico from 'picocolors'
-import validateProjectName from 'validate-npm-package-name'
+import validatePackageName from 'validate-npm-package-name'
 
 import { templates } from '../templates'
 import path from 'path'
@@ -17,15 +17,15 @@ type ValidationResult =
       problems?: never
     }
 
-export async function validatePackageName({
-  name,
-  path: path_,
+export async function validateProjectName({
+  projectName,
+  projectPath,
 }: {
-  name: string
-  path: string
+  projectName: string
+  projectPath: string
 }): Promise<ValidationResult> {
   // Validate project name
-  const nameValidation = validateProjectName(name)
+  const nameValidation = validatePackageName(projectName)
   if (!nameValidation.validForNewPackages) {
     const problems = [
       ...(nameValidation.errors ?? []),
@@ -33,17 +33,17 @@ export async function validatePackageName({
     ]
     return {
       valid: false,
-      message: `🙈 "${name}" is not a valid project name.`,
+      message: `🙈 "${projectName}" is not a valid project name.`,
       problems: problems.map((problem) => `👉 ${problem}`).join('\n'),
     }
   }
 
   // Validate project target path
-  const targetPath = path.join(process.cwd(), path_)
+  const targetPath = path.join(process.cwd(), projectPath)
   if (await fs.pathExists(targetPath))
     return {
       valid: false,
-      message: `🙈 the directory "${path_}" already exists.`,
+      message: `🙈 the directory "${projectPath}" already exists.`,
       problems: '👉 choose another name or delete the directory.',
     }
 
@@ -54,24 +54,27 @@ export async function validatePackageName({
 
 export async function validateTemplateName({
   isNameRequired = true,
-  name,
+  templateName,
   templatesPath,
 }: {
   isNameRequired?: boolean
-  name: string
+  templateName: string
   templatesPath: string
 }): Promise<ValidationResult> {
-  if (isNameRequired && !name)
+  if (isNameRequired && !templateName)
     return {
       valid: false,
       message: `🙈 no template provided.`,
       problems: '👉 select a template or provide one using --template.',
     }
 
-  if (name && !(await fs.pathExists(path.join(templatesPath, name))))
+  if (
+    templateName &&
+    !(await fs.pathExists(path.join(templatesPath, templateName)))
+  )
     return {
       valid: false,
-      message: `🙈 the template "${name}" does not exist.`,
+      message: `🙈 the template "${templateName}" does not exist.`,
       problems: `Choose a valid name. Available: ${templates
         .map(({ name }) => name)
         .join(', ')}`,
