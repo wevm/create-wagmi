@@ -9,12 +9,12 @@
   },
   "dependencies": {
     "buffer": "^6.0.3",
-    "ethers": "^5.7.0",
+    "ethers": "^5.7.2",
     "process": "^0.11.10",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "util": "^0.12.4",
-    "wagmi": "^0.7.2"
+    "wagmi": "^0.8.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.9",
