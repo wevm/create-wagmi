@@ -1,2 +1,7 @@
-export { detectPackageManager } from './detectPackageManager'
-export { validatePackageName } from './validate'
+export { getPackageManager } from './getPackageManager'
+export { notifyUpdate } from './notifyUpdate'
+export {
+  validatePackageName,
+  validateTemplateName,
+  ValidationError,
+} from './validate'

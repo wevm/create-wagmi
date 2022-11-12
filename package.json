@@ -3,7 +3,7 @@
   "description": "Create wagmi apps with one command",
   "version": "0.0.1",
   "type": "module",
-  "license": "WAGMIT",
+  "license": "MIT",
   "bin": {
     "create-wagmi": "dist/index.js"
   },

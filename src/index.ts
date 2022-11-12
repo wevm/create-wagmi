@@ -1,21 +1,23 @@
 #!/usr/bin/env node
 import { cac } from 'cac'
 import cpy from 'cpy'
-import { default as spawn } from 'cross-spawn'
 import { execa } from 'execa'
 import fs from 'fs-extra'
 import { oraPromise } from 'ora'
 import pico from 'picocolors'
 import { default as prompts } from 'prompts'
-import checkForUpdate from 'update-check'
 
 import packageJson from '../package.json'
 import { templates } from './templates'
-import { detectPackageManager, validatePackageName } from './utils'
+import {
+  ValidationError,
+  getPackageManager,
+  notifyUpdate,
+  validatePackageName,
+  validateTemplateName,
+} from './utils'
 import path from 'path'
 import { fileURLToPath } from 'url'
-
-class CLIError extends Error {}
 
 const log = console.log
 
@@ -35,38 +37,30 @@ const cli = cac(packageJson.name)
   .help()
 
 const { args, options } = cli.parse(process.argv)
-
-async function getPackageManager() {
-  if (options.pnpm) return 'pnpm'
-  if (options.yarn) return 'yarn'
-  if (options.npm) return 'npm'
-  return detectPackageManager()
-}
+export type CLIOptions = typeof options
 
 async function run() {
   if (options.help) return
 
   const __dirname = fileURLToPath(new URL('.', import.meta.url))
   const templatesPath = path.join(__dirname, '..', 'templates')
+  const template = options.template || options.t
 
   // Validate template if provided
-  const template = options.template ?? options.t
-  if (template && !(await fs.pathExists(path.join(templatesPath, template))))
-    throw new CLIError(
-      [
-        pico.red(`The template "${template}" does not exist.`),
-        `Choose a valid name. Available: ${templates
-          .map(({ name }) => name)
-          .join(', ')}`,
-      ].join('\n'),
-    )
+  let templateValidation = await validateTemplateName({
+    isNameRequired: false,
+    name: template,
+    templatesPath,
+  })
+  if (!templateValidation.valid) throw new ValidationError(templateValidation)
 
   // Validate project name
-  let projectName, projectPath
+  let projectName: string
+  let projectPath: string
   if (args[0]) {
     projectPath = args[0].trim()
     const splitPath = projectPath.split('/')
-    projectName = splitPath[splitPath.length - 1]?.trim()
+    projectName = splitPath[splitPath.length - 1]?.trim() || ''
     log(pico.green('✔'), pico.bold(`Using project name:`), projectName)
   } else {
     const res = await prompts({
@@ -74,35 +68,27 @@ async function run() {
       name: 'projectName',
       message: 'What is your project named?',
       type: 'text',
-      validate(name) {
-        const validation = validatePackageName(name)
-        if (validation.valid) return true
-        return 'Invalid project name: ' + validation.problems![0]
+      async validate(projectName) {
+        const validation = await validatePackageName({
+          name: projectName,
+          path: projectName,
+        })
+        if (!validation.valid) return validation.message
+        return true
       },
     })
     projectName = res.projectName?.trim()
     projectPath = projectName
   }
 
-  if (!validatePackageName(projectName).valid)
-    throw new CLIError(
-      [
-        pico.red(`🙈 "${projectName}" is not a valid project name.`),
-        validatePackageName(projectName).problems?.map(
-          (problem) => `👉 ${problem}`,
-        ),
-      ].join('\n'),
-    )
-  const targetPath = path.join(process.cwd(), projectPath)
-  if (await fs.pathExists(targetPath))
-    throw new CLIError(
-      [
-        pico.red(`🙈 the directory "${projectPath}" already exists.`),
-        `👉 choose another name or delete the directory.`,
-      ].join('\n'),
-    )
+  // Validate project name
+  const nameValidation = await validatePackageName({
+    name: projectName,
+    path: projectPath,
+  })
+  if (!nameValidation.valid) throw new ValidationError(nameValidation)
 
-  // Check template
+  // Extract template name from CLI or prompt
   const templateName =
     template ??
     (
@@ -113,17 +99,19 @@ async function run() {
         choices: templates.map(({ name, ...t }) => ({ ...t, value: name })),
       })
     ).templateName
-  if (!templateName)
-    throw new CLIError(
-      [
-        pico.red(`🙈 no template provided.`),
-        `👉 select a template or provide one using --template.`,
-      ].join('\n'),
-    )
 
+  // Validate template name
+  templateValidation = await validateTemplateName({
+    name: templateName,
+    templatesPath,
+  })
+  if (!templateValidation.valid) throw new ValidationError(templateValidation)
+
+  const targetPath = path.join(process.cwd(), projectPath)
   log(`Creating a new wagmi app in ${pico.green(targetPath)}.`)
   log()
 
+  // Copy template contents into the target path
   const templatePath = path.join(templatesPath, templateName)
   await cpy(path.join(templatePath, '**', '*'), targetPath, {
     rename: (name) => name.replace(/^_dot_/, '.'),
@@ -138,7 +126,7 @@ async function run() {
   )
 
   // Install in background to not clutter screen
-  const packageManager = await getPackageManager()
+  const packageManager = await getPackageManager({ options })
   log(pico.bold(`Using ${packageManager}.`))
   log()
   log('Installing packages. This might take a couple of minutes.')
@@ -148,7 +136,7 @@ async function run() {
   ]
   await oraPromise(
     new Promise((resolve, reject) => {
-      const child = spawn(packageManager, installArgs, {
+      const child = execa(packageManager, installArgs, {
         cwd: targetPath,
         env: {
           ...process.env,
@@ -211,45 +199,17 @@ async function run() {
   log()
 }
 
-async function notifyUpdate() {
-  try {
-    const res = await checkForUpdate(packageJson)
-    if (res?.latest) {
-      const packageManager = await getPackageManager()
-      const updateMessage =
-        packageManager === 'pnpm'
-          ? `pnpm add -g ${packageJson.name}`
-          : packageManager === 'yarn'
-          ? `yarn global add ${packageJson.name}`
-          : `npm i -g ${packageJson.name}`
-
-      log(
-        pico.bold(
-          pico.yellow('A new version of `{packageJson.name}` is available!') +
-            '\n' +
-            'You can update by running: ' +
-            pico.cyan(updateMessage) +
-            '\n',
-        ),
-      )
-    }
-    process.exit()
-  } catch {
-    // ignore error
-  }
-}
-
 ;(async () => {
   try {
     await run()
-    await notifyUpdate()
+    await notifyUpdate({ options })
   } catch (error) {
     log(
-      error instanceof CLIError
+      error instanceof ValidationError
         ? error.message
         : pico.red((<Error>error).message),
     )
-    await notifyUpdate()
+    await notifyUpdate({ options })
     process.exit(1)
   }
 })()
