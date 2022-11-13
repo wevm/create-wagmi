@@ -129,7 +129,6 @@ async function run() {
   const packageManager = await getPackageManager({ options })
   log(pico.bold(`Using ${packageManager}.`))
   log()
-  log('Installing packages. This might take a couple of minutes.')
   const installArgs = [
     'install',
     packageManager === 'npm' ? '--quiet' : '--silent',
@@ -146,7 +145,7 @@ async function run() {
           // dependencies when production
           NODE_ENV: 'development',
         },
-        stdio: 'inherit',
+        stdio: 'ignore',
       })
       child.on('close', (code) => {
         if (code !== 0) {
@@ -157,6 +156,7 @@ async function run() {
       })
     }),
     {
+      text: 'Installing packages. This may take a couple of minutes.',
       failText: 'Failed to install packages.',
       successText: 'Installed packages.',
     },
@@ -177,14 +177,16 @@ async function run() {
       ],
       { cwd: targetPath },
     )
-    log('Initialized a git repository.')
+    log(pico.green('✔'), 'Initialized git repository.')
     log()
   }
 
+  log('―――――――――――――――――――――')
+  log()
   log(
-    `${pico.green('Success!')} Created ${projectName} at ${path.resolve(
-      projectPath,
-    )}`,
+    `${pico.green('Success!')} Created ${pico.bold(
+      projectName,
+    )} at ${pico.green(path.resolve(projectPath))}`,
   )
   log()
   log(
@@ -197,6 +199,23 @@ async function run() {
     )}\``,
   )
   log()
+  log('―――――――――――――――――――――')
+  log()
+  log(
+    `${pico.yellow(
+      'Important note:',
+    )} It is HIGHLY recommended that you add an ${pico.bold(
+      pico.underline(`alchemyProvider`),
+    )}, ${pico.bold(pico.underline('infuraProvider'))} or alike to ${pico.blue(
+      'src/wagmi.ts',
+    )} before deploying your project to production to prevent being rate-limited.`,
+  )
+  log()
+  log(
+    `Read more: ${pico.blue(
+      pico.underline('https://wagmi.sh/docs/getting-started#configure-chains'),
+    )}`,
+  )
 }
 
 ;(async () => {
