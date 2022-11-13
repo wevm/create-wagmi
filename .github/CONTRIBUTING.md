@@ -1,4 +1,4 @@
-# Contributing
+# Contributing Guidelines
 
 Thanks for your interest in contributing to `create-wagmi`! Please take a moment to review this document **before submitting a pull request.**
 
@@ -6,9 +6,37 @@ If you want to contribute, but aren't sure where to start, you can create a [new
 
 > **Note**
 >
-> **Please ask first before starting work on any significant new features.**
+> **Please ask first before starting work on any significant new features or templates.**
 >
-> It's never a fun experience to have your pull request declined after investing time and effort into a new feature. To avoid this from happening, we request that contributors create a [feature request](https://github.com/wagmi-dev/create/discussions/new?category=ideas) to first discuss any API changes or significant new ideas.
+> It's never a fun experience to have your pull request declined after investing time and effort into a new feature. To avoid this from happening, we request that contributors create a [feature/template request](https://github.com/wagmi-dev/create/discussions/new?category=ideas) to first discuss any template ideas or new CLI features.
+
+<br>
+
+---
+
+<br>
+
+## Templates
+
+What makes a good template is focus. There's certainly room for templates that show off a whole app experience, but the vast majority of useful templates are focused on a specific use-case. Otherwise, it's hard for people to know what to look for in the code.
+
+This means you should avoid adding stuff that isn't absolutely necessary for the template. Start with bare bones and add only what you need.
+
+Templates should:
+
+- Support commonly-used, Ethereum-related networks (Mainnet, Optimism, Polygon, etc.),
+- Have only necessary dependencies,
+- Include a `wagmi.ts` file with wagmi configuration,
+- Use TypeScript,
+- Be as practical as reasonable (balanced with the focus).
+
+The template name should consist of the **framework name** along with the **use-case or feature**. Examples are: `next`, or `next-with-rainbowkit`, or `next-with-etherscan`. The name should be clear and concise, focusing on the use-case or main technology being demonstrated.
+
+Once you are ready, open up a pull request with the template.
+
+<br>
+
+---
 
 <br>
 
@@ -40,13 +68,13 @@ This guide covers more advanced topics. Pick the topics based on your needs.
 To start contributing to the project, clone it to your local machine using git:
 
 ```bash
-git clone https://github.com/wagmi-dev/create.git
+git clone https://github.com/wagmi-dev/create-wagmi.git
 ```
 
 Or the [GitHub CLI](https://cli.github.com):
 
 ```bash
-gh repo clone wagmi-dev/create
+gh repo clone wagmi-dev/create-wagmi
 ```
 
 <div align="right">
