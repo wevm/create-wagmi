@@ -213,7 +213,11 @@ async function run() {
   log()
   log(
     `Read more: ${pico.blue(
-      pico.underline('https://wagmi.sh/docs/getting-started#configure-chains'),
+      pico.underline(
+        templateName === 'next-with-connectkit'
+          ? 'https://docs.family.co/connectkit/getting-started#getting-started-2-implementation'
+          : 'https://wagmi.sh/docs/getting-started#configure-chains',
+      ),
     )}`,
   )
 }
