@@ -206,7 +206,7 @@ async function run() {
       'Important note:',
     )} It is HIGHLY recommended that you add an ${pico.bold(
       pico.underline(`alchemyProvider`),
-    )}, ${pico.bold(pico.underline('infuraProvider'))} or alike to ${pico.blue(
+    )}, ${pico.bold(pico.underline('infuraProvider'))}, or alike to ${pico.blue(
       'src/wagmi.ts',
     )} before deploying your project to production to prevent being rate-limited.`,
   )
@@ -225,6 +225,7 @@ async function run() {
 ;(async () => {
   try {
     await run()
+    log()
     await notifyUpdate({ options })
   } catch (error) {
     log(
@@ -232,6 +233,7 @@ async function run() {
         ? error.message
         : pico.red((<Error>error).message),
     )
+    log()
     await notifyUpdate({ options })
     process.exit(1)
   }
