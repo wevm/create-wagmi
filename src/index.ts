@@ -42,6 +42,14 @@ export type CLIOptions = typeof options
 async function run() {
   if (options.help) return
 
+  log()
+  log(
+    `Welcome to ${pico.bold(
+      pico.blue('create-wagmi'),
+    )} – the quickest way to get started with wagmi!`,
+  )
+  log()
+
   const __dirname = fileURLToPath(new URL('.', import.meta.url))
   const templatesPath = path.join(__dirname, '..', 'templates')
   let templateName = options.template || options.t
