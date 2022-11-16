@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.1
+
+### Patch Changes
+
+- 900cbdc: Updated `@rainbow-me/rainbowkit` dependency in Next + RainbowKit template
+
 ## 0.1.0
 
 ### Minor Changes
