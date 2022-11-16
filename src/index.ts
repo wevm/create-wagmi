@@ -142,26 +142,16 @@ async function run() {
     packageManager === 'npm' ? '--quiet' : '--silent',
   ]
   await oraPromise(
-    new Promise((resolve, reject) => {
-      const child = execa(packageManager, installArgs, {
-        cwd: targetPath,
-        env: {
-          ...process.env,
-          ADBLOCK: '1',
-          DISABLE_OPENCOLLECTIVE: '1',
-          // we set NODE_ENV to development as pnpm skips dev
-          // dependencies when production
-          NODE_ENV: 'development',
-        },
-        stdio: 'ignore',
-      })
-      child.on('close', (code) => {
-        if (code !== 0) {
-          reject({ command: `${packageManager} ${installArgs.join(' ')}` })
-          return
-        }
-        resolve(true)
-      })
+    execa(packageManager, installArgs, {
+      cwd: targetPath,
+      env: {
+        ...process.env,
+        ADBLOCK: '1',
+        DISABLE_OPENCOLLECTIVE: '1',
+        // we set NODE_ENV to development as pnpm skips dev
+        // dependencies when production
+        NODE_ENV: 'development',
+      },
     }),
     {
       text: 'Installing packages. This may take a couple of minutes.',
