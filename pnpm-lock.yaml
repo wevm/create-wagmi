@@ -166,7 +166,7 @@ importers:
 
   templates/next-with-rainbowkit:
     specifiers:
-      '@rainbow-me/rainbowkit': ^0.7.4
+      '@rainbow-me/rainbowkit': ^0.8.0
       '@types/node': ^17.0.31
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
@@ -179,7 +179,7 @@ importers:
       typescript: ^4.6.4
       wagmi: ^0.8.2
     dependencies:
-      '@rainbow-me/rainbowkit': 0.7.4_ucdalzv23r47jkiuzyyt6vwxha
+      '@rainbow-me/rainbowkit': 0.8.0_ucdalzv23r47jkiuzyyt6vwxha
       ethers: 5.7.2
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -3071,14 +3071,14 @@ packages:
       webpack-dev-server: 4.11.1_webpack@5.74.0
     dev: true
 
-  /@rainbow-me/rainbowkit/0.7.4_ucdalzv23r47jkiuzyyt6vwxha:
-    resolution: {integrity: sha512-o3kwaHZw9O40gfK2DamJZzoqPbK7EHC+8++QtFy5AQ0Sw5P+U0tzb/87KHatSIXyIwrZTEGD0uciPjCGikJMjg==}
+  /@rainbow-me/rainbowkit/0.8.0_ucdalzv23r47jkiuzyyt6vwxha:
+    resolution: {integrity: sha512-4nqH5OGcNzYMe/fYSBU7qM8H102UzZ6PwURMA5z6puDct0BGpeBk0dofqaGATSDam+4RdEmKaqOz5r/1Lc3/0g==}
     engines: {node: '>=12.4'}
     peerDependencies:
       ethers: '>=5.5.1'
       react: '>=17'
       react-dom: '>=17'
-      wagmi: 0.5.x || 0.6.x || 0.7.x
+      wagmi: 0.8.x
     dependencies:
       '@vanilla-extract/css': 1.9.1
       '@vanilla-extract/dynamic': 2.0.2
