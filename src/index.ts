@@ -108,6 +108,26 @@ async function run() {
     ).templateName
   }
 
+  // TODO: Extract template specific "validation hooks"
+  let walletConnectProjectId
+  if (templateName.includes('web3modal')) {
+    const errorMessage = 'Project ID is required.'
+    walletConnectProjectId = (
+      await prompts({
+        name: 'walletConnectProjectId',
+        message: `What is your WalletConnect Cloud Project ID?\n${pico.blue(
+          'Find it at: https://cloud.walletconnect.com/sign-in',
+        )}\n`,
+        type: 'text',
+        validate(projectId) {
+          if (!projectId) return errorMessage
+          return true
+        },
+      })
+    ).walletConnectProjectId
+    if (!walletConnectProjectId) throw new Error(errorMessage)
+  }
+
   // Validate template name
   templateValidation = await validateTemplateName({
     templateName,
@@ -179,6 +199,18 @@ async function run() {
     log()
   }
 
+  // TODO: Extract template specific "replace hooks"
+  if (walletConnectProjectId) {
+    const configPath = path.join(targetPath, 'src', 'wagmi.ts')
+    const config = fs.readFileSync(configPath).toString()
+    fs.writeFileSync(
+      configPath,
+      config.replace('<WALLET_CONNECT_PROJECT_ID>', walletConnectProjectId),
+    )
+    log(pico.green('✔'), 'Added WalletConnect project ID.')
+    log()
+  }
+
   log('―――――――――――――――――――――')
   log()
   log(
@@ -199,25 +231,31 @@ async function run() {
   log()
   log('―――――――――――――――――――――')
   log()
-  log(
-    `${pico.yellow(
-      'Important note:',
-    )} It is HIGHLY recommended that you add an ${pico.bold(
-      pico.underline(`alchemyProvider`),
-    )}, ${pico.bold(pico.underline('infuraProvider'))}, or alike to ${pico.blue(
-      'src/wagmi.ts',
-    )} before deploying your project to production to prevent being rate-limited.`,
-  )
-  log()
-  log(
-    `Read more: ${pico.blue(
-      pico.underline(
-        templateName === 'next-with-connectkit'
-          ? 'https://docs.family.co/connectkit/getting-started#getting-started-2-implementation'
-          : 'https://wagmi.sh/docs/getting-started#configure-chains',
-      ),
-    )}`,
-  )
+
+  // TODO: Extract template specific "footer logs"
+  if (templateName !== 'next-with-web3modal') {
+    log(
+      `${pico.yellow(
+        'Important note:',
+      )} It is HIGHLY recommended that you add an ${pico.bold(
+        pico.underline(`alchemyProvider`),
+      )}, ${pico.bold(
+        pico.underline('infuraProvider'),
+      )}, or alike to ${pico.blue(
+        'src/wagmi.ts',
+      )} before deploying your project to production to prevent being rate-limited.`,
+    )
+    log()
+    log(
+      `Read more: ${pico.blue(
+        pico.underline(
+          templateName === 'next-with-connectkit'
+            ? 'https://docs.family.co/connectkit/getting-started#getting-started-2-implementation'
+            : 'https://wagmi.sh/docs/getting-started#configure-chains',
+        ),
+      )}`,
+    )
+  }
 }
 
 ;(async () => {

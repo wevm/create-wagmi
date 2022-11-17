@@ -15,6 +15,11 @@ export const templates = [
     description: 'Next.js wagmi project with RainbowKit included',
   },
   {
+    name: 'next-with-web3modal',
+    title: 'Next.js + Web3Modal',
+    description: 'Next.js wagmi project with Web3Modal included',
+  },
+  {
     name: 'vite-react',
     title: 'Vite',
     description: 'Vite React wagmi project',
