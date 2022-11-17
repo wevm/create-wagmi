@@ -207,7 +207,7 @@ async function run() {
       configPath,
       config.replace('<WALLET_CONNECT_PROJECT_ID>', walletConnectProjectId),
     )
-    log(pico.green('✔'), 'Added WalletConnect project ID.')
+    log(pico.green('✔'), 'Added WalletConnect Project ID.')
     log()
   }
 
