@@ -153,8 +153,15 @@ async function run() {
     JSON.stringify(packageJson, null, 2),
   )
 
-  // Install in background to not clutter screen
   const packageManager = await getPackageManager({ options })
+  if (packageManager === 'npm') {
+    await fs.appendFile(
+      path.join(targetPath, '.npmrc'),
+      '\nlegacy-peer-deps = true',
+    )
+  }
+
+  // Install in background to not clutter screen
   log(pico.bold(`Using ${packageManager}.`))
   log()
   const installArgs = [
