@@ -1,5 +1,12 @@
 # create-wagmi
 
+## 0.1.3
+
+### Patch Changes
+
+- 353332a: Added Web3Modal template
+- dd95b14: **next-with-connectkit**: Update `connectkit` to `^1.0.0`
+
 ## 0.1.2
 
 ### Patch Changes
