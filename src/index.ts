@@ -7,11 +7,12 @@ import { oraPromise } from 'ora'
 import pico from 'picocolors'
 import { default as prompts } from 'prompts'
 
-import packageJson from '../package.json'
-import { templates } from './templates'
+import rootPackageJson from '../package.json'
 import {
+  Template,
   ValidationError,
   getPackageManager,
+  getTemplatesMeta,
   notifyUpdate,
   validateProjectName,
   validateTemplateName,
@@ -21,25 +22,20 @@ import { fileURLToPath } from 'url'
 
 const log = console.log
 
-const cli = cac(packageJson.name)
-  .version(packageJson.version)
-  .usage(`${pico.green('<project-directory>')} [options]`)
-  .option(
-    '-t, --template [name]',
-    `A template to bootstrap with. Available: ${templates
-      .map(({ name }) => name)
-      .join(', ')}`,
-  )
-  .option('--npm', 'Use npm as your package manager')
-  .option('--pnpm', 'Use pnpm as your package manager')
-  .option('--yarn', 'Use yarn as your package manager')
-  .option('--skip-git', 'Skips initializing the project as a git repository')
-  .help()
+export type CLIArgs = readonly string[]
+export type CLIOptions = {
+  [k: string]: any
+}
 
-const { args, options } = cli.parse(process.argv)
-export type CLIOptions = typeof options
-
-async function run() {
+async function run({
+  args,
+  options,
+  templates,
+}: {
+  args: CLIArgs
+  options: CLIOptions
+  templates: Template[]
+}) {
   if (options.help) return
 
   log()
@@ -59,6 +55,7 @@ async function run() {
     isNameRequired: false,
     templateName,
     templatesPath,
+    templates,
   })
   if (!templateValidation.valid) throw new ValidationError(templateValidation)
 
@@ -108,30 +105,19 @@ async function run() {
     ).templateName
   }
 
-  // TODO: Extract template specific "validation hooks"
-  let walletConnectProjectId
-  if (templateName.includes('web3modal')) {
-    const errorMessage = 'Project ID is required.'
-    walletConnectProjectId = (
-      await prompts({
-        name: 'walletConnectProjectId',
-        message: `What is your WalletConnect Cloud Project ID?\n${pico.blue(
-          'Find it at: https://cloud.walletconnect.com/sign-in',
-        )}\n`,
-        type: 'text',
-        validate(projectId) {
-          if (!projectId) return errorMessage
-          return true
-        },
-      })
-    ).walletConnectProjectId
-    if (!walletConnectProjectId) throw new Error(errorMessage)
-  }
+  // Get template meta
+  const templateMeta = templates.find(({ name }) => name === templateName)
+  if (!templateMeta) return
+
+  const hooks = templateMeta.hooks
+
+  await hooks?.afterValidate?.()
 
   // Validate template name
   templateValidation = await validateTemplateName({
     templateName,
     templatesPath,
+    templates,
   })
   if (!templateValidation.valid) throw new ValidationError(templateValidation)
 
@@ -142,6 +128,7 @@ async function run() {
   // Copy template contents into the target path
   const templatePath = path.join(templatesPath, templateName)
   await cpy(path.join(templatePath, '**', '*'), targetPath, {
+    filter: (file) => file.name !== '_meta.ts',
     rename: (name) => name.replace(/^_dot_/, '.'),
   })
 
@@ -188,6 +175,8 @@ async function run() {
   )
   log()
 
+  await hooks?.afterInstall?.({ targetPath })
+
   // Create git repository
   if (!options.skipGit) {
     await execa('git', ['init'], { cwd: targetPath })
@@ -203,18 +192,6 @@ async function run() {
       { cwd: targetPath },
     )
     log(pico.green('✔'), 'Initialized git repository.')
-    log()
-  }
-
-  // TODO: Extract template specific "replace hooks"
-  if (walletConnectProjectId) {
-    const configPath = path.join(targetPath, 'src', 'wagmi.ts')
-    const config = fs.readFileSync(configPath).toString()
-    fs.writeFileSync(
-      configPath,
-      config.replace('<WALLET_CONNECT_PROJECT_ID>', walletConnectProjectId),
-    )
-    log(pico.green('✔'), 'Added WalletConnect Project ID.')
     log()
   }
 
@@ -239,35 +216,37 @@ async function run() {
   log('―――――――――――――――――――――')
   log()
 
-  // TODO: Extract template specific "footer logs"
-  if (templateName !== 'next-with-web3modal') {
-    log(
-      `${pico.yellow(
-        'Important note:',
-      )} It is HIGHLY recommended that you add an ${pico.bold(
-        pico.underline(`alchemyProvider`),
-      )}, ${pico.bold(
-        pico.underline('infuraProvider'),
-      )}, or alike to ${pico.blue(
-        'src/wagmi.ts',
-      )} before deploying your project to production to prevent being rate-limited.`,
-    )
-    log()
-    log(
-      `Read more: ${pico.blue(
-        pico.underline(
-          templateName === 'next-with-connectkit'
-            ? 'https://docs.family.co/connectkit/getting-started#getting-started-2-implementation'
-            : 'https://wagmi.sh/docs/getting-started#configure-chains',
-        ),
-      )}`,
-    )
-  }
+  await hooks?.afterSetup?.({ targetPath })
 }
 
 ;(async () => {
+  let templates: Template[]
   try {
-    await run()
+    templates = await getTemplatesMeta()
+  } catch (err) {
+    log(pico.red((<Error>err).message))
+    process.exit(1)
+  }
+
+  const cli = cac(rootPackageJson.name)
+    .version(rootPackageJson.version)
+    .usage(`${pico.green('<project-directory>')} [options]`)
+    .option(
+      '-t, --template [name]',
+      `A template to bootstrap with. Available: ${templates
+        .map(({ name }) => name)
+        .join(', ')}`,
+    )
+    .option('--npm', 'Use npm as your package manager')
+    .option('--pnpm', 'Use pnpm as your package manager')
+    .option('--yarn', 'Use yarn as your package manager')
+    .option('--skip-git', 'Skips initializing the project as a git repository')
+    .help()
+
+  const { args, options } = cli.parse(process.argv)
+
+  try {
+    await run({ args, options, templates })
     log()
     await notifyUpdate({ options })
   } catch (error) {

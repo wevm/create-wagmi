@@ -4,7 +4,10 @@ import { chain, configureChains, createClient } from 'wagmi'
 export const walletConnectProjectId = '<WALLET_CONNECT_PROJECT_ID>'
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.mainnet],
+  [
+    chain.mainnet,
+    ...(process.env.NODE_ENV === 'development' ? [chain.goerli] : []),
+  ],
   [walletConnectProvider({ projectId: walletConnectProjectId })],
 )
 
