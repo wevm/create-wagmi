@@ -44,10 +44,11 @@ const getTemplates = () => {
     src += `\n  () => import('../../templates/${template}/_meta'),`
   })
   src += '\n]\n'
-  fs.writeFileSync(
-    path.join(__dirname, 'src/generated/templateImports.ts'),
-    src,
-  )
+
+  const generatedPath = path.join(__dirname, 'src/generated')
+  if (!fs.existsSync(generatedPath)) fs.mkdirSync(generatedPath)
+  fs.writeFileSync(path.join(generatedPath, 'templateImports.ts'), src)
+
   return templates
 }
 
