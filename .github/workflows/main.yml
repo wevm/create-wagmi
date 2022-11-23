@@ -47,7 +47,7 @@ jobs:
 
   build:
     name: Build
-    needs: lint
+    needs: install
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -75,7 +75,7 @@ jobs:
 
   lint:
     name: Lint
-    needs: install
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
