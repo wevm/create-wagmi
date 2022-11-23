@@ -2,7 +2,7 @@ import fs from 'fs-extra'
 import pico from 'picocolors'
 import validatePackageName from 'validate-npm-package-name'
 
-import { templates } from '../templates'
+import { Template } from './createTemplate'
 import path from 'path'
 
 type ValidationResult =
@@ -56,10 +56,12 @@ export async function validateTemplateName({
   isNameRequired = true,
   templateName,
   templatesPath,
+  templates,
 }: {
   isNameRequired?: boolean
   templateName: string
   templatesPath: string
+  templates: Template[]
 }): Promise<ValidationResult> {
   if (isNameRequired && !templateName)
     return {
