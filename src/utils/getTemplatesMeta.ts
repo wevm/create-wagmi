@@ -1,6 +1,6 @@
 import templateImports from '../generated/templateImports'
 import { templates as templateNames } from '../meta'
-import { Template } from './createTemplate'
+import { Template } from '../types'
 
 export const getTemplatesMeta = async () => {
   let templates = await Promise.all(
