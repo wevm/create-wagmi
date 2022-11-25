@@ -1,5 +1,7 @@
 import { Template } from '../types'
 
-export function createTemplate(template: Template): Template {
+type CreateTemplate = Omit<Template, 'id' | 'framework' | 'name'>
+
+export function createTemplate(template: CreateTemplate): CreateTemplate {
   return template
 }

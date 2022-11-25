@@ -1,9 +1,6 @@
-import { selectAndInjectProviders } from '../../src/hooks'
-import { createTemplate } from '../../src/utils'
+import { createTemplateFramework } from '../../src/utils/createTemplateFramework'
 
-export default createTemplate({
-  name: 'vite-react',
-  title: 'Vite',
-  description: 'Vite React wagmi project',
-  hooks: selectAndInjectProviders({ envPrefix: 'VITE_' }),
+export default createTemplateFramework({
+  title: 'Vite (React)',
+  description: 'A Vite (React) project',
 })
