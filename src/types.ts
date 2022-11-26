@@ -32,8 +32,19 @@ export type Provider = {
 }
 
 export type Template<TCtx = any> = {
+  default?: boolean
+  description: string
+  framework: string
+  hooks?: Hooks<TCtx>
+  id: string
   name: string
   title: string
+}
+
+export type TemplateFramework = {
+  default?: boolean
   description: string
-  hooks?: Hooks<TCtx>
+  id: string
+  name: string
+  title: string
 }

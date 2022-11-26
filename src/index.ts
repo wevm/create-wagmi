@@ -12,11 +12,14 @@ import { Template } from './types'
 import {
   ValidationError,
   getPackageManager,
-  getTemplatesMeta,
+  getTemplateFrameworks,
+  getTemplates,
+  getTemplatesByFramework,
   notifyUpdate,
   validateProjectName,
   validateTemplateName,
 } from './utils'
+import { getTemplateFramework } from './utils/templates'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -26,6 +29,7 @@ export type CLIArgs = readonly string[]
 export type CLIOptions = {
   [k: string]: any
 }
+
 async function run({
   args,
   options,
@@ -47,13 +51,12 @@ async function run({
 
   const __dirname = fileURLToPath(new URL('.', import.meta.url))
   const templatesPath = path.join(__dirname, '..', 'templates')
-  let templateName = options.template || options.t
+  let templateId = options.template || options.t
 
   // Validate template if provided
   let templateValidation = await validateTemplateName({
     isNameRequired: false,
-    templateName,
-    templatesPath,
+    templateId,
     templates,
   })
   if (!templateValidation.valid) throw new ValidationError(templateValidation)
@@ -92,20 +95,56 @@ async function run({
   })
   if (!nameValidation.valid) throw new ValidationError(nameValidation)
 
-  // Extract template name from CLI or prompt
-  if (!templateName) {
-    templateName = (
+  const frameworks = await getTemplateFrameworks()
+
+  const templatesByFramework = await getTemplatesByFramework()
+  let frameworkId =
+    getTemplateFramework({
+      templateId,
+      templatesByFramework,
+    }) || frameworks[0]?.id
+
+  // Extract template ID from CLI or prompt
+  if (!templateId || !frameworkId) {
+    frameworkId = (
       await prompts({
-        name: 'templateName',
+        name: 'frameworkId',
+        message: 'What framework would you like to use?',
+        type: 'select',
+        choices: frameworks
+          .map(({ name, ...t }) => ({
+            ...t,
+            value: name,
+          }))
+          .sort((a, b) => (a.default && !b.default ? -1 : 1)),
+      })
+    ).frameworkId
+    if (!frameworkId) return
+
+    const frameworkTemplates = templatesByFramework[frameworkId]
+    if (!frameworkTemplates) return
+
+    templateId = (
+      await prompts({
+        name: 'templateId',
         message: 'What template would you like to use?',
         type: 'select',
-        choices: templates.map(({ name, ...t }) => ({ ...t, value: name })),
+        choices: frameworkTemplates
+          .map(({ id, ...t }) => ({
+            ...t,
+            value: id,
+          }))
+          .sort((a, b) => (a.default && !b.default ? -1 : 1)),
       })
-    ).templateName
+    ).templateId
   }
 
+  // Get framework meta
+  const frameworkMeta = frameworks.find(({ id }) => id === frameworkId)
+  if (!frameworkMeta) return
+
   // Get template meta
-  const templateMeta = templates.find(({ name }) => name === templateName)
+  const templateMeta = templates.find(({ id }) => id === templateId)
   if (!templateMeta) return
 
   const context = (() => {
@@ -120,8 +159,7 @@ async function run({
 
   // Validate template name
   templateValidation = await validateTemplateName({
-    templateName,
-    templatesPath,
+    templateId,
     templates,
   })
   if (!templateValidation.valid) throw new ValidationError(templateValidation)
@@ -129,9 +167,19 @@ async function run({
   const targetPath = path.join(process.cwd(), projectPath)
   log(`Creating a new wagmi app in ${pico.green(targetPath)}.`)
   log()
+  log(
+    `Using ${pico.bold(frameworkMeta.title)}${
+      !templateMeta.default ? ` with ${pico.bold(templateMeta.title)}` : ''
+    }.`,
+  )
+  log()
 
   // Copy template contents into the target path
-  const templatePath = path.join(templatesPath, templateName)
+  const templatePath = path.join(
+    templatesPath,
+    frameworkMeta.name,
+    templateMeta.name,
+  )
   await cpy(path.join(templatePath, '**', '*'), targetPath, {
     filter: (file) => file.name !== '_meta.ts',
     rename: (name) => name.replace(/^_dot_/, '.'),
@@ -156,7 +204,7 @@ async function run({
   await hooks?.beforeInstall?.({ context, targetPath })
 
   // Install in background to not clutter screen
-  log(pico.bold(`Using ${packageManager}.`))
+  log(`Using ${pico.bold(packageManager)}.`)
   log()
   const installArgs = [
     'install',
@@ -229,7 +277,7 @@ async function run({
 ;(async () => {
   let templates: Template[]
   try {
-    templates = await getTemplatesMeta()
+    templates = await getTemplates()
   } catch (err) {
     log(pico.red((<Error>err).message))
     process.exit(1)
@@ -241,7 +289,8 @@ async function run({
     .option(
       '-t, --template [name]',
       `A template to bootstrap with. Available: ${templates
-        .map(({ name }) => name)
+        .sort((a, b) => (a.default && !b.default ? -1 : 1))
+        .map(({ id }) => id)
         .join(', ')}`,
     )
     .option('--npm', 'Use npm as your package manager')

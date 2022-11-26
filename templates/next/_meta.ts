@@ -1,9 +1,7 @@
-import { selectAndInjectProviders } from '../../src/hooks'
-import { createTemplate } from '../../src/utils'
+import { createTemplateFramework } from '../../src/utils/createTemplateFramework'
 
-export default createTemplate({
-  name: 'next',
+export default createTemplateFramework({
+  default: true,
   title: 'Next.js',
-  description: 'Next.js wagmi project',
-  hooks: selectAndInjectProviders({ envPrefix: 'NEXT_PUBLIC_' }),
+  description: 'A Next.js project',
 })

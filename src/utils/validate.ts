@@ -54,31 +54,26 @@ export async function validateProjectName({
 
 export async function validateTemplateName({
   isNameRequired = true,
-  templateName,
-  templatesPath,
+  templateId,
   templates,
 }: {
   isNameRequired?: boolean
-  templateName: string
-  templatesPath: string
+  templateId: string
   templates: Template[]
 }): Promise<ValidationResult> {
-  if (isNameRequired && !templateName)
+  if (isNameRequired && !templateId)
     return {
       valid: false,
       message: `🙈 no template provided.`,
       problems: '👉 select a template or provide one using --template.',
     }
 
-  if (
-    templateName &&
-    !(await fs.pathExists(path.join(templatesPath, templateName)))
-  )
+  if (templateId && !templates.find((template) => template.id === templateId))
     return {
       valid: false,
-      message: `🙈 the template "${templateName}" does not exist.`,
+      message: `🙈 the template "${templateId}" does not exist.`,
       problems: `Choose a valid name. Available: ${templates
-        .map(({ name }) => name)
+        .map(({ id }) => id)
         .join(', ')}`,
     }
 
