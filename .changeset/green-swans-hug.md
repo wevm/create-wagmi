@@ -12,12 +12,12 @@ Example:
 templates/
   next/
     connectkit/
-    plain/
+    default/
     rainbowkit/
     web3modal
   vite-react/
     connectkit/
-    plain/
+    default/
     rainbowkit/
     web3modal/
 ```

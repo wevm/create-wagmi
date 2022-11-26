@@ -3,7 +3,7 @@ import { createTemplate } from '../../../src/utils'
 
 export default createTemplate({
   default: true,
-  title: 'Plain',
-  description: 'Next.js wagmi project',
-  hooks: selectAndInjectProviders({ envPrefix: 'NEXT_PUBLIC_' }),
+  title: 'Default',
+  description: 'Vite (React) wagmi project',
+  hooks: selectAndInjectProviders({ envPrefix: 'VITE_' }),
 })
