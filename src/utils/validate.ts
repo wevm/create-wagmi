@@ -2,7 +2,7 @@ import fs from 'fs-extra'
 import pico from 'picocolors'
 import validatePackageName from 'validate-npm-package-name'
 
-import { Template } from './createTemplate'
+import { Template } from '../types'
 import path from 'path'
 
 type ValidationResult =

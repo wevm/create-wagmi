@@ -8,8 +8,8 @@ import pico from 'picocolors'
 import { default as prompts } from 'prompts'
 
 import rootPackageJson from '../package.json'
+import { Template } from './types'
 import {
-  Template,
   ValidationError,
   getPackageManager,
   getTemplatesMeta,
@@ -26,7 +26,6 @@ export type CLIArgs = readonly string[]
 export type CLIOptions = {
   [k: string]: any
 }
-
 async function run({
   args,
   options,
@@ -109,9 +108,15 @@ async function run({
   const templateMeta = templates.find(({ name }) => name === templateName)
   if (!templateMeta) return
 
-  const hooks = templateMeta.hooks
+  const context = (() => {
+    let ctx = {}
+    const get = () => ctx
+    const set = (ctx_: any) => (ctx = { ...ctx, ...ctx_ })
+    return { get, set }
+  })()
 
-  await hooks?.afterValidate?.()
+  const hooks = templateMeta.hooks
+  await hooks?.afterValidate?.({ context })
 
   // Validate template name
   templateValidation = await validateTemplateName({
@@ -148,6 +153,8 @@ async function run({
     )
   }
 
+  await hooks?.beforeInstall?.({ context, targetPath })
+
   // Install in background to not clutter screen
   log(pico.bold(`Using ${packageManager}.`))
   log()
@@ -175,7 +182,7 @@ async function run({
   )
   log()
 
-  await hooks?.afterInstall?.({ targetPath })
+  await hooks?.afterInstall?.({ context, targetPath })
 
   // Create git repository
   if (!options.skipGit) {
@@ -216,7 +223,7 @@ async function run({
   log('―――――――――――――――――――――')
   log()
 
-  await hooks?.afterSetup?.({ targetPath })
+  await hooks?.afterSetup?.({ context, targetPath })
 }
 
 ;(async () => {
