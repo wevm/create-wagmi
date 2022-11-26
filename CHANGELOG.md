@@ -1,5 +1,32 @@
 # create-wagmi
 
+## 0.1.4
+
+### Patch Changes
+
+- c39666b: Added ability to select providers
+- 37708ed: **Added ability to select frameworks.**
+
+  Each directory in `templates/` now mirrors a "framework", where its child directories mirror a "template" for that framework.
+
+  Example:
+
+  ```
+  templates/
+    next/
+      connectkit/
+      default/
+      rainbowkit/
+      web3modal
+    vite-react/
+      connectkit/
+      default/
+      rainbowkit/
+      web3modal/
+  ```
+
+- 399d2b9: Moved template configuration to the template level + added hooks
+
 ## 0.1.3
 
 ### Patch Changes
