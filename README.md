@@ -31,9 +31,7 @@ yarn create wagmi --template next-with-connectkit
 - `next-rainbowkit`: A Next.js wagmi project with RainbowKit included.
 - `next-web3modal`: A Next.js wagmi project with Web3Modal included.
 - `vite-react`: A Vite (React) wagmi project.
-- `vite-react-connectkit`: A Vite (React) wagmi project with ConnectKit included.
-- `vite-react-rainbowkit`: A Vite (React) wagmi project with RainbowKit included.
-- `vite-react-web3modal`: A Vite (React) wagmi project with Web3Modal included.
+- `create-react-app`: A Create React App wagmi project
 
 ## Options
 
