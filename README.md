@@ -17,11 +17,11 @@ yarn create wagmi
 By default, `create-wagmi` scaffolds a basic Next.js application with wagmi. However, you can specify a custom template by passing the `--template`/`-t` flag:
 
 ```bash
-npm init wagmi -- --template next-with-connectkit
+npm init wagmi -- --template next-connectkit
 # or
-pnpm create wagmi --template next-with-connectkit
+pnpm create wagmi --template next-connectkit
 # or
-yarn create wagmi --template next-with-connectkit
+yarn create wagmi --template next-connectkit
 ```
 
 `create-wagmi` currently comes with the following templates:
