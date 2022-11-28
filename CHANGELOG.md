@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.5
+
+### Patch Changes
+
+- 6bd6c74: Updated repo link in package.json
+
 ## 0.1.4
 
 ### Patch Changes
