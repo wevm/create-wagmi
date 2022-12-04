@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "connectkit": "^1.0.0",
+    "connectkit": "^1.1.0",
     "ethers": "^5.7.0",
     "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wagmi": "~0.7.15"
+    "wagmi": "~0.8.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.31",
