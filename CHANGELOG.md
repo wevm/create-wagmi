@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.6
+
+### Patch Changes
+
+- b544457: Updated `connectkit` to `1.1.0` in the ConnectKit templates
+
 ## 0.1.5
 
 ### Patch Changes
