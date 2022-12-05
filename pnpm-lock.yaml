@@ -1,5 +1,8 @@
 lockfileVersion: 5.4
 
+overrides:
+  '@wagmi/core': 0.7.5
+
 importers:
 
   .:
@@ -114,13 +117,13 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.6.4
-      wagmi: ~0.8.2
+      wagmi: 0.0.0-20221205003311
     dependencies:
       ethers: 5.7.2
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      wagmi: 0.8.6_ir5rj4sfbt34e63yhlgyn6mx7a
+      wagmi: 0.0.0-20221205003311_ir5rj4sfbt34e63yhlgyn6mx7a
     devDependencies:
       '@types/node': 17.0.45
       '@types/react': 18.0.25
@@ -172,7 +175,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.6.4
-      wagmi: ~0.8.2
+      wagmi: 0.0.0-20221205003311
     dependencies:
       '@web3modal/ethereum': 2.0.0-beta.6_ethers@5.7.2
       '@web3modal/react': 2.0.0-beta.6_biqbaboplfbrettd7655fr4n2y
@@ -180,7 +183,7 @@ importers:
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      wagmi: 0.8.6_ir5rj4sfbt34e63yhlgyn6mx7a
+      wagmi: 0.0.0-20221205003311_ir5rj4sfbt34e63yhlgyn6mx7a
     devDependencies:
       '@types/node': 17.0.45
       '@types/react': 18.0.25
@@ -233,7 +236,7 @@ importers:
       typescript: ^4.7.4
       util: ^0.12.4
       vite: ^3.1.8
-      wagmi: ~0.8.2
+      wagmi: 0.0.0-20221205003311
     dependencies:
       buffer: 6.0.3
       ethers: 5.7.2
@@ -241,7 +244,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       util: 0.12.5
-      wagmi: 0.8.6_ir5rj4sfbt34e63yhlgyn6mx7a
+      wagmi: 0.0.0-20221205003311_ir5rj4sfbt34e63yhlgyn6mx7a
     devDependencies:
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
@@ -295,7 +298,7 @@ importers:
       typescript: ^4.7.4
       util: ^0.12.4
       vite: ^3.1.8
-      wagmi: ~0.8.2
+      wagmi: 0.0.0-20221205003311
     dependencies:
       '@web3modal/ethereum': 2.0.0-beta.6_ethers@5.7.2
       '@web3modal/react': 2.0.0-beta.6_vrbfpf7l3dmha57kzmbjd4uuiq
@@ -305,7 +308,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       util: 0.12.5
-      wagmi: 0.8.6_ir5rj4sfbt34e63yhlgyn6mx7a
+      wagmi: 0.0.0-20221205003311_ir5rj4sfbt34e63yhlgyn6mx7a
     devDependencies:
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
@@ -7225,6 +7228,36 @@ packages:
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
+
+  /wagmi/0.0.0-20221205003311_ir5rj4sfbt34e63yhlgyn6mx7a:
+    resolution: {integrity: sha512-ryt3PudyaA4nXVWLvPrUXsuhynkQYS9iG5BwCY7jj5bQKew7kO8Qf4PNiuHvk0Al93keKdODqf0DHuVTHyUEDw==}
+    peerDependencies:
+      ethers: '>=5.5.1'
+      react: '>=17.0.0'
+    dependencies:
+      '@coinbase/wallet-sdk': 3.6.0
+      '@tanstack/query-sync-storage-persister': 4.15.1
+      '@tanstack/react-query': 4.16.1_biqbaboplfbrettd7655fr4n2y
+      '@tanstack/react-query-persist-client': 4.16.1_fsy4krnncv4idvr4txy3aqiuqm
+      '@wagmi/core': 0.7.5_a6nglt3pnqivd37taylm76ecl4
+      '@walletconnect/ethereum-provider': 1.8.0
+      abitype: 0.1.8_typescript@4.8.4
+      ethers: 5.7.2
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@tanstack/query-core'
+      - bufferutil
+      - debug
+      - encoding
+      - immer
+      - react-dom
+      - react-native
+      - supports-color
+      - typescript
+      - utf-8-validate
+    dev: false
 
   /wagmi/0.8.6_ir5rj4sfbt34e63yhlgyn6mx7a:
     resolution: {integrity: sha512-60pQtwrT7qrXRr68rAJLdPlk9PhDuHvaT1A8cUdEU6bkUamk9F8DHeGQ52NJkBubLLaaUXmPMZw8vWoVheGxWA==}
