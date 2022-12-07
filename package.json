@@ -73,5 +73,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/wagmi-dev/create-wagmi.git"
+  },
+  "pnpm": {
+    "overrides": {
+      "@wagmi/core": "0.7.5"
+    }
   }
 }
