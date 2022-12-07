@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.7
+
+### Patch Changes
+
+- a59d9c5: Upgrade `default` & `web3modal` templates to `wagmi@0.9`
+
 ## 0.1.6
 
 ### Patch Changes
