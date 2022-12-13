@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.8
+
+### Patch Changes
+
+- 65cc841: Update RainbowKit & ConnectKit templates to `wagmi@~0.9.0`
+
 ## 0.1.7
 
 ### Patch Changes
