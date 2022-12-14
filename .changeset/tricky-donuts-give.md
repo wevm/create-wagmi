@@ -1,5 +1,5 @@
 ---
-'create-wagmi': minor
+'create-wagmi': patch
 ---
 
-Fixed import env variables in vite templates
+Fixed import env variables in Vite (React) templates
