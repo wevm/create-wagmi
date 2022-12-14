@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.9
+
+### Patch Changes
+
+- 904a2e1: Fixed import env variables in Vite (React) templates
+
 ## 0.1.8
 
 ### Patch Changes
