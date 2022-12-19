@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.10
+
+### Patch Changes
+
+- 9cd7140: Amend gitignore files for Vite templates
+
 ## 0.1.9
 
 ### Patch Changes
