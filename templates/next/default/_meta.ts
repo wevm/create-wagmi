@@ -5,5 +5,8 @@ export default createTemplate({
   default: true,
   title: 'Default',
   description: 'Next.js wagmi project',
-  hooks: selectAndInjectProviders({ envPrefix: 'NEXT_PUBLIC_' }),
+  hooks: selectAndInjectProviders({
+    envNamespace: 'process.env',
+    envPrefix: 'NEXT_PUBLIC_',
+  }),
 })

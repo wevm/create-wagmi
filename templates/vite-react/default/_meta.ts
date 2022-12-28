@@ -5,5 +5,8 @@ export default createTemplate({
   default: true,
   title: 'Default',
   description: 'Vite (React) wagmi project',
-  hooks: selectAndInjectProviders({ envPrefix: 'VITE_' }),
+  hooks: selectAndInjectProviders({
+    envNamespace: 'import.meta.env',
+    envPrefix: 'VITE_',
+  }),
 })

@@ -7,7 +7,13 @@ export default createTemplate({
   title: 'ConnectKit',
   description: 'Vite (React) wagmi project with ConnectKit included',
   hooks: compose([
-    selectAndInjectProviders({ envPrefix: 'VITE_' }),
-    injectProviders({ envPrefix: 'VITE_' }),
+    selectAndInjectProviders({
+      envNamespace: 'import.meta.env',
+      envPrefix: 'VITE_',
+    }),
+    injectProviders({
+      envNamespace: 'import.meta.env',
+      envPrefix: 'VITE_',
+    }),
   ]),
 })

@@ -6,8 +6,10 @@ import { SelectAndInjectProvidersContext } from '../common'
 import path from 'path'
 
 export const injectProviders = ({
+  envNamespace,
   envPrefix,
 }: {
+  envNamespace: string
   envPrefix: string
 }): Hooks<SelectAndInjectProvidersContext> => ({
   async beforeInstall({ context, targetPath }) {
@@ -25,7 +27,7 @@ export const injectProviders = ({
             .map((providerName) => {
               const provider = providers[providerName]
               if (!provider.apiKey) return ''
-              return `    ${provider.name}Id: process.env.${envPrefix}${provider.apiKey.env}!,\n`
+              return `    ${provider.name}Id: ${envNamespace}.${envPrefix}${provider.apiKey.env}!,\n`
             })
             .join('') +
           '  })' +

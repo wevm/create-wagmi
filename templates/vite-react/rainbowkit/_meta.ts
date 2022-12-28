@@ -4,5 +4,8 @@ import { createTemplate } from '../../../src/utils'
 export default createTemplate({
   title: 'RainbowKit',
   description: 'Vite (React) wagmi project with RainbowKit included',
-  hooks: selectAndInjectProviders({ envPrefix: 'VITE_' }),
+  hooks: selectAndInjectProviders({
+    envNamespace: 'import.meta.env',
+    envPrefix: 'VITE_',
+  }),
 })
