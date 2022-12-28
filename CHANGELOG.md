@@ -1,5 +1,12 @@
 # create-wagmi
 
+## 0.1.11
+
+### Patch Changes
+
+- cc638dd: Fixed an issue where Vite projects used `process.env` instead of `import.meta.env`.
+- 75d1c2d: Updated `wagmi` to `~0.10.0`.
+
 ## 0.1.10
 
 ### Patch Changes
