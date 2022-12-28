@@ -13,8 +13,10 @@ export type SelectAndInjectProvidersContext = {
 }
 
 export const selectAndInjectProviders = ({
+  envNamespace,
   envPrefix,
 }: {
+  envNamespace: string
   envPrefix: string
 }): Hooks<SelectAndInjectProvidersContext> => ({
   async afterValidate({ context }) {
@@ -23,7 +25,13 @@ export const selectAndInjectProviders = ({
   },
   async beforeInstall({ context, targetPath }) {
     const { envVars, providerNames } = context.get()
-    injectProviders({ envPrefix, envVars, providerNames, targetPath })
+    injectProviders({
+      envNamespace,
+      envPrefix,
+      envVars,
+      providerNames,
+      targetPath,
+    })
   },
   async afterSetup({ context }) {
     const { providerNames } = context.get()

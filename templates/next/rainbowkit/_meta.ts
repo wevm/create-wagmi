@@ -4,5 +4,8 @@ import { createTemplate } from '../../../src/utils'
 export default createTemplate({
   title: 'RainbowKit',
   description: 'Next.js wagmi project with RainbowKit included',
-  hooks: selectAndInjectProviders({ envPrefix: 'NEXT_PUBLIC_' }),
+  hooks: selectAndInjectProviders({
+    envNamespace: 'process.env',
+    envPrefix: 'NEXT_PUBLIC_',
+  }),
 })

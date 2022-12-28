@@ -7,7 +7,10 @@ export default createTemplate({
   title: 'ConnectKit',
   description: 'Next.js wagmi project with ConnectKit included',
   hooks: compose([
-    selectAndInjectProviders({ envPrefix: 'NEXT_PUBLIC_' }),
-    injectProviders({ envPrefix: 'NEXT_PUBLIC_' }),
+    selectAndInjectProviders({
+      envNamespace: 'process.env',
+      envPrefix: 'NEXT_PUBLIC_',
+    }),
+    injectProviders({ envNamespace: 'process.env', envPrefix: 'NEXT_PUBLIC_' }),
   ]),
 })

@@ -5,11 +5,13 @@ import { ProviderApiKeyEnvVars, ProviderName } from '../types'
 import path from 'path'
 
 export function injectProviders({
+  envNamespace,
   envPrefix,
   envVars,
   targetPath,
   providerNames,
 }: {
+  envNamespace: string
   envPrefix: string
   envVars: Record<ProviderApiKeyEnvVars, string>
   targetPath: string
@@ -52,7 +54,7 @@ export function injectProviders({
         const provider = providers[providerName]
         return `\n    ${provider.name}Provider(${
           provider.apiKey
-            ? `{ apiKey: process.env.${envPrefix}${provider.apiKey.env}! }`
+            ? `{ apiKey: ${envNamespace}.${envPrefix}${provider.apiKey.env}! }`
             : ''
         }),`
       })
