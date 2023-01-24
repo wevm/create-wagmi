@@ -1,0 +1,28 @@
+{
+  "name": "wagmi-template-next-with-erc20",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "npm run wagmi && next dev",
+    "build": "npm run wagmi && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "wagmi": "wagmi generate"
+  },
+  "dependencies": {
+    "@wagmi/cli": "0.0.0-20230121004721",
+    "ethers": "^5.7.2",
+    "next": "^13.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "wagmi": "0.0.0-20230121004721"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "eslint": "^8.15.0",
+    "eslint-config-next": "^12.1.6",
+    "typescript": "^4.6.4"
+  }
+}

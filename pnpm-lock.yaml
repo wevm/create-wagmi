@@ -73,6 +73,64 @@ importers:
       tsup: 6.3.0_typescript@4.8.4
       typescript: 4.8.4
 
+  templates/next/cli-erc:
+    specifiers:
+      '@types/node': ^17.0.31
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      '@wagmi/cli': 0.0.0-20230121004721
+      eslint: ^8.15.0
+      eslint-config-next: ^12.1.6
+      ethers: ^5.7.2
+      next: ^13.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^4.6.4
+      wagmi: 0.0.0-20230121004721
+    dependencies:
+      '@wagmi/cli': 0.0.0-20230121004721_bl6nfptkpbnx7cw2vcz4megaxe
+      ethers: 5.7.2
+      next: 13.0.5_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      wagmi: 0.0.0-20230121004721_5lzokslmfwu3zxcy7hymrmiwvy
+    devDependencies:
+      '@types/node': 17.0.45
+      '@types/react': 18.0.25
+      '@types/react-dom': 18.0.9
+      eslint: 8.17.0
+      eslint-config-next: 12.3.4_vhsckgnokn2tf7m5xkrurmvfv4
+      typescript: 4.8.4
+
+  templates/next/cli-foundry:
+    specifiers:
+      '@types/node': ^17.0.31
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      '@wagmi/cli': 0.0.0-20230121004721
+      eslint: ^8.15.0
+      eslint-config-next: ^12.1.6
+      ethers: ^5.7.2
+      next: ^13.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^4.6.4
+      wagmi: 0.0.0-20230121004721
+    dependencies:
+      '@wagmi/cli': 0.0.0-20230121004721_bl6nfptkpbnx7cw2vcz4megaxe
+      ethers: 5.7.2
+      next: 13.0.5_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      wagmi: 0.0.0-20230121004721_5lzokslmfwu3zxcy7hymrmiwvy
+    devDependencies:
+      '@types/node': 17.0.45
+      '@types/react': 18.0.25
+      '@types/react-dom': 18.0.9
+      eslint: 8.17.0
+      eslint-config-next: 12.3.4_vhsckgnokn2tf7m5xkrurmvfv4
+      typescript: 4.8.4
+
   templates/next/connectkit:
     specifiers:
       '@types/node': ^17.0.31
@@ -128,41 +186,6 @@ importers:
       eslint: 8.17.0
       eslint-config-next: 12.3.4_vhsckgnokn2tf7m5xkrurmvfv4
       typescript: 4.8.4
-
-  templates/next/foundry:
-    specifiers:
-      '@types/node': ^17.0.31
-      '@types/react': ^18.0.9
-      '@types/react-dom': ^18.0.3
-      '@wagmi/cli': 0.0.0-20230121004721
-      eslint: ^8.15.0
-      eslint-config-next: ^12.1.6
-      ethers: ^5.7.2
-      next: ^13.0.0
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      typescript: ^4.6.4
-      wagmi: 0.0.0-20230121004721
-    dependencies:
-      '@wagmi/cli': 0.0.0-20230121004721_bl6nfptkpbnx7cw2vcz4megaxe
-      ethers: 5.7.2
-      next: 13.0.5_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      wagmi: 0.0.0-20230121004721_5lzokslmfwu3zxcy7hymrmiwvy
-    devDependencies:
-      '@types/node': 17.0.45
-      '@types/react': 18.0.25
-      '@types/react-dom': 18.0.9
-      eslint: 8.17.0
-      eslint-config-next: 12.3.4_vhsckgnokn2tf7m5xkrurmvfv4
-      typescript: 4.8.4
-
-  templates/next/foundry/contracts/lib/forge-std:
-    specifiers: {}
-
-  templates/next/foundry/contracts/lib/forge-std/lib/ds-test:
-    specifiers: {}
 
   templates/next/rainbowkit:
     specifiers:
@@ -224,6 +247,68 @@ importers:
       eslint-config-next: 12.3.4_vhsckgnokn2tf7m5xkrurmvfv4
       typescript: 4.8.4
 
+  templates/vite-react/cli-erc:
+    specifiers:
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      '@vitejs/plugin-react': ^2.1.0
+      '@wagmi/cli': 0.0.0-20230121004721
+      buffer: ^6.0.3
+      ethers: ^5.7.2
+      process: ^0.11.10
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^4.7.4
+      util: ^0.12.4
+      vite: ^3.1.8
+      wagmi: 0.0.0-20230121004721
+    dependencies:
+      '@wagmi/cli': 0.0.0-20230121004721_bl6nfptkpbnx7cw2vcz4megaxe
+      buffer: 6.0.3
+      ethers: 5.7.2
+      process: 0.11.10
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      util: 0.12.5
+      wagmi: 0.0.0-20230121004721_ir5rj4sfbt34e63yhlgyn6mx7a
+    devDependencies:
+      '@types/react': 18.0.25
+      '@types/react-dom': 18.0.9
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
+      typescript: 4.8.4
+      vite: 3.2.4
+
+  templates/vite-react/cli-foundry:
+    specifiers:
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      '@vitejs/plugin-react': ^2.1.0
+      '@wagmi/cli': 0.0.0-20230121004721
+      buffer: ^6.0.3
+      ethers: ^5.7.2
+      process: ^0.11.10
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^4.7.4
+      util: ^0.12.4
+      vite: ^3.1.8
+      wagmi: 0.0.0-20230121004721
+    dependencies:
+      '@wagmi/cli': 0.0.0-20230121004721_bl6nfptkpbnx7cw2vcz4megaxe
+      buffer: 6.0.3
+      ethers: 5.7.2
+      process: 0.11.10
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      util: 0.12.5
+      wagmi: 0.0.0-20230121004721_ir5rj4sfbt34e63yhlgyn6mx7a
+    devDependencies:
+      '@types/react': 18.0.25
+      '@types/react-dom': 18.0.9
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
+      typescript: 4.8.4
+      vite: 3.2.4
+
   templates/vite-react/connectkit:
     specifiers:
       '@types/react': ^18.0.9
@@ -283,43 +368,6 @@ importers:
       '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       typescript: 4.8.4
       vite: 3.2.4
-
-  templates/vite-react/foundry:
-    specifiers:
-      '@types/react': ^18.0.9
-      '@types/react-dom': ^18.0.3
-      '@vitejs/plugin-react': ^2.1.0
-      '@wagmi/cli': 0.0.0-20230121004721
-      buffer: ^6.0.3
-      ethers: ^5.7.2
-      process: ^0.11.10
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      typescript: ^4.7.4
-      util: ^0.12.4
-      vite: ^3.1.8
-      wagmi: 0.0.0-20230121004721
-    dependencies:
-      '@wagmi/cli': 0.0.0-20230121004721_bl6nfptkpbnx7cw2vcz4megaxe
-      buffer: 6.0.3
-      ethers: 5.7.2
-      process: 0.11.10
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      util: 0.12.5
-      wagmi: 0.0.0-20230121004721_ir5rj4sfbt34e63yhlgyn6mx7a
-    devDependencies:
-      '@types/react': 18.0.25
-      '@types/react-dom': 18.0.9
-      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
-      typescript: 4.8.4
-      vite: 3.2.4
-
-  templates/vite-react/foundry/contracts/lib/forge-std:
-    specifiers: {}
-
-  templates/vite-react/foundry/contracts/lib/forge-std/lib/ds-test:
-    specifiers: {}
 
   templates/vite-react/rainbowkit:
     specifiers:

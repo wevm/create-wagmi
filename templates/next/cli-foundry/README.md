@@ -110,5 +110,6 @@ To learn more about [Next.js](https://nextjs.org), [Foundry](https://book.getfou
 - [Foundry Documentation](https://book.getfoundry.sh/) – learn more about the Foundry stack (Anvil, Forge, etc).
 - [wagmi Documentation](https://wagmi.sh) – learn about wagmi Hooks and API.
 - [wagmi Examples](https://wagmi.sh/examples/connect-wallet) – a suite of simple examples using wagmi.
+- [@wagmi/cli Documentation](https://wagmi.sh/cli) – learn more about the wagmi CLI.
 - [Next.js Documentation](https://nextjs.org/docs) learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.

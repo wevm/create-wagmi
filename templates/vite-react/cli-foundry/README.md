@@ -110,4 +110,5 @@ To learn more about [Vite](https://vitejs.dev/), [Foundry](https://book.getfound
 - [Foundry Documentation](https://book.getfoundry.sh/) – learn more about the Foundry stack (Anvil, Forge, etc).
 - [wagmi Documentation](https://wagmi.sh) – learn about wagmi Hooks and API.
 - [wagmi Examples](https://wagmi.sh/examples/connect-wallet) – a suite of simple examples using wagmi.
+- [@wagmi/cli Documentation](https://wagmi.sh/cli) – learn more about the wagmi CLI.
 - [Vite Documentation](https://vitejs.dev/) – learn about Vite features and API.
