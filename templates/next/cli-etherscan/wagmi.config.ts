@@ -12,7 +12,7 @@ export default defineConfig(() => {
     contracts: [],
     plugins: [
       etherscan({
-        apiKey: env.ETHERSCAN_API_KEY,
+        apiKey: env.ETHERSCAN_API_KEY!,
         chainId: chains.mainnet.id,
         contracts: [
           {
