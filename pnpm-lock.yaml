@@ -73,6 +73,35 @@ importers:
       tsup: 6.3.0_typescript@4.9.4
       typescript: 4.9.4
 
+  templates/next/cli-abi:
+    specifiers:
+      '@types/node': ^17.0.31
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      '@wagmi/cli': 0.0.0-20230121004721
+      eslint: ^8.15.0
+      eslint-config-next: ^12.1.6
+      ethers: ^5.7.2
+      next: ^13.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^4.9.4
+      wagmi: 0.0.0-20230121004721
+    dependencies:
+      '@wagmi/cli': 0.0.0-20230121004721_7jqvfox5nkkmtxbnybabetb2fy
+      ethers: 5.7.2
+      next: 13.0.5_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      wagmi: 0.0.0-20230121004721_q3rmnbwwunsufccbu3lnf7uwce
+    devDependencies:
+      '@types/node': 17.0.45
+      '@types/react': 18.0.25
+      '@types/react-dom': 18.0.9
+      eslint: 8.17.0
+      eslint-config-next: 12.3.4_nlhvlitwvxohdkmvb3doqj6nbq
+      typescript: 4.9.4
+
   templates/next/cli-erc:
     specifiers:
       '@types/node': ^17.0.31
@@ -275,6 +304,37 @@ importers:
       eslint: 8.17.0
       eslint-config-next: 12.3.4_nlhvlitwvxohdkmvb3doqj6nbq
       typescript: 4.9.4
+
+  templates/vite-react/cli-abi:
+    specifiers:
+      '@types/react': ^18.0.9
+      '@types/react-dom': ^18.0.3
+      '@vitejs/plugin-react': ^2.1.0
+      '@wagmi/cli': 0.0.0-20230121004721
+      buffer: ^6.0.3
+      ethers: ^5.7.2
+      process: ^0.11.10
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      typescript: ^4.9.4
+      util: ^0.12.4
+      vite: ^3.1.8
+      wagmi: 0.0.0-20230121004721
+    dependencies:
+      '@wagmi/cli': 0.0.0-20230121004721_7jqvfox5nkkmtxbnybabetb2fy
+      buffer: 6.0.3
+      ethers: 5.7.2
+      process: 0.11.10
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      util: 0.12.5
+      wagmi: 0.0.0-20230121004721_5fkdkfy2bkgsnhvxgn477z7iae
+    devDependencies:
+      '@types/react': 18.0.25
+      '@types/react-dom': 18.0.9
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
+      typescript: 4.9.4
+      vite: 3.2.4
 
   templates/vite-react/cli-erc:
     specifiers:

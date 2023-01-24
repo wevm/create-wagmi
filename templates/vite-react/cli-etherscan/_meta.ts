@@ -1,3 +1,5 @@
+import picocolors from 'picocolors'
+
 import { compose } from '../../../src/hooks'
 import {
   PromptAndInjectEtherscanContext,
@@ -8,7 +10,7 @@ import {
 import { createTemplate } from '../../../src/utils'
 
 export default createTemplate({
-  title: '@wagmi/cli + Etherscan (Mint NFT)',
+  title: `@wagmi/cli + Etherscan ${picocolors.blue('(Mint NFT Example)')}`,
   description:
     'Vite (React) wagmi project with @wagmi/cli Etherscan Plugin set up',
   hooks: compose<
