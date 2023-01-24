@@ -52,6 +52,7 @@ You will first need to set up your `.env` to tell Forge where to deploy your con
 
 Go ahead and open up your `.env` file, and enter the following env vars:
 
+- `ETHERSCAN_API_KEY`: Your Etherscan API Key.
 - `FORGE_RPC_URL`: The RPC URL of the network to deploy to.
 - `FORGE_PRIVATE_KEY`: The private key of the wallet you want to deploy from.
 

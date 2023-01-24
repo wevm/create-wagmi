@@ -1,6 +1,6 @@
 export type Context<TCtx> = {
   get: () => TCtx
-  set: (val: TCtx) => void
+  set: (val: Partial<TCtx>) => void
 }
 
 export type Hooks<TCtx> = {
