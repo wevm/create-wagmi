@@ -1,5 +1,16 @@
 # create-wagmi
 
+## 0.1.12
+
+### Patch Changes
+
+- af6e551: Added templates for `@wagmi/cli`:
+
+  - `@wagmi/cli (Mint NFT Example)`
+  - `@wagmi/cli + ERC20`
+  - `@wagmi/cli + Etherscan (Mint NFT Example)`
+  - `@wagmi/cli + Foundry (Counter.sol Example)`
+
 ## 0.1.11
 
 ### Patch Changes
