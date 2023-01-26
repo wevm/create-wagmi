@@ -26,6 +26,8 @@ yarn create wagmi --template next-connectkit
 
 `create-wagmi` currently comes with the following templates:
 
+**Next.js**
+
 - `next` (default): A Next.js wagmi project.
 - `next-cli-abi`: A Next.js wagmi project with `@wagmi/cli` set up
 - `next-cli-erc`: A Next.js wagmi project with`@wagmi/cli` ERC Plugin set up
@@ -34,6 +36,9 @@ yarn create wagmi --template next-connectkit
 - `next-connectkit`: A Next.js wagmi project with ConnectKit included.
 - `next-rainbowkit`: A Next.js wagmi project with RainbowKit included.
 - `next-web3modal`: A Next.js wagmi project with Web3Modal included.
+
+**Vite (React)**
+
 - `vite-react`: A Vite (React) wagmi project.
 - `vite-react-cli-abi`: A Next.js wagmi project with `@wagmi/cli` set up
 - `vite-react-cli-erc`: A Next.js wagmi project with `@wagmi/cli` ERC Plugin set up
