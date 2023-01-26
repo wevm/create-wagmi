@@ -18,8 +18,11 @@ export function injectProviders({
   providerNames: ProviderName[]
 }) {
   if (Object.values(envVars).length > 0) {
-    fs.writeFileSync(path.join(targetPath, '.env'), '')
-    fs.writeFileSync(path.join(targetPath, '.env.example'), '')
+    if (!fs.existsSync(path.join(targetPath, '.env')))
+      fs.writeFileSync(path.join(targetPath, '.env'), '')
+    if (!fs.existsSync(path.join(targetPath, '.env.example')))
+      fs.writeFileSync(path.join(targetPath, '.env.example'), '')
+
     Object.entries(envVars).forEach(([key, value]) => {
       fs.appendFileSync(
         path.join(targetPath, '.env'),
