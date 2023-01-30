@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.14
+
+### Patch Changes
+
+- 19f3675: Bumped `wagmi` to `~0.11.0`.
+
 ## 0.1.13
 
 ### Patch Changes
