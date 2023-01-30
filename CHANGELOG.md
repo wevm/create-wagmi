@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.13
+
+### Patch Changes
+
+- c1ab75c: Bump @wagmi/cli
+
 ## 0.1.12
 
 ### Patch Changes
