@@ -30,7 +30,7 @@ yarn create wagmi --template next-connectkit
 
 - `next` (default): A Next.js wagmi project.
 - `next-cli-abi`: A Next.js wagmi project with `@wagmi/cli` set up
-- `next-cli-erc`: A Next.js wagmi project with`@wagmi/cli` ERC Plugin set up
+- `next-cli-erc`: A Next.js wagmi project with `@wagmi/cli` ERC Plugin set up
 - `next-cli-etherscan`: A Next.js wagmi project with `@wagmi/cli` Etherscan Plugin set up
 - `next-cli-foundry`: A Next.js wagmi project with `@wagmi/cli` Foundry Plugin set up
 - `next-connectkit`: A Next.js wagmi project with ConnectKit included.
