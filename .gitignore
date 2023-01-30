@@ -9,4 +9,3 @@ dist
 node_modules
 tsconfig.tsbuildinfo
 generated
-generated.ts
