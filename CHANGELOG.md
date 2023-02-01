@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.15
+
+### Patch Changes
+
+- 6e30599: Added `test` config to `foundry.toml` on the Foundry templates.
+
 ## 0.1.14
 
 ### Patch Changes
