@@ -78,7 +78,7 @@ importers:
       '@types/node': ^17.0.31
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.7.2
@@ -88,7 +88,7 @@ importers:
       typescript: ^4.9.4
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       ethers: 5.7.2
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -107,7 +107,7 @@ importers:
       '@types/node': ^17.0.31
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.7.2
@@ -117,7 +117,7 @@ importers:
       typescript: ^4.9.4
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       ethers: 5.7.2
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -136,7 +136,7 @@ importers:
       '@types/node': ^17.0.31
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.7.2
@@ -146,7 +146,7 @@ importers:
       typescript: ^4.9.4
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       ethers: 5.7.2
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -165,7 +165,7 @@ importers:
       '@types/node': ^17.0.31
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.7.2
@@ -175,7 +175,7 @@ importers:
       typescript: ^4.9.4
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       ethers: 5.7.2
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -310,7 +310,7 @@ importers:
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
       '@vitejs/plugin-react': ^2.1.0
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       buffer: ^6.0.3
       ethers: ^5.7.2
       process: ^0.11.10
@@ -321,7 +321,7 @@ importers:
       vite: ^3.1.8
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       buffer: 6.0.3
       ethers: 5.7.2
       process: 0.11.10
@@ -341,7 +341,7 @@ importers:
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
       '@vitejs/plugin-react': ^2.1.0
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       buffer: ^6.0.3
       ethers: ^5.7.2
       process: ^0.11.10
@@ -352,7 +352,7 @@ importers:
       vite: ^3.1.8
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       buffer: 6.0.3
       ethers: 5.7.2
       process: 0.11.10
@@ -372,7 +372,7 @@ importers:
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
       '@vitejs/plugin-react': ^2.1.0
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       buffer: ^6.0.3
       ethers: ^5.7.2
       process: ^0.11.10
@@ -383,7 +383,7 @@ importers:
       vite: ^3.1.8
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       buffer: 6.0.3
       ethers: 5.7.2
       process: 0.11.10
@@ -403,7 +403,7 @@ importers:
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.3
       '@vitejs/plugin-react': ^2.1.0
-      '@wagmi/cli': ~0.1.2
+      '@wagmi/cli': ~0.1.5
       buffer: ^6.0.3
       ethers: ^5.7.2
       process: ^0.11.10
@@ -414,7 +414,7 @@ importers:
       vite: ^3.1.8
       wagmi: ~0.11.0
     dependencies:
-      '@wagmi/cli': 0.1.2_sc5zqy2ifbojqlygl4abm5h7ha
+      '@wagmi/cli': 0.1.5_sc5zqy2ifbojqlygl4abm5h7ha
       buffer: 6.0.3
       ethers: 5.7.2
       process: 0.11.10
@@ -2455,14 +2455,25 @@ packages:
       typescript: 4.9.4
     dev: false
 
-  /@wagmi/cli/0.1.2_sc5zqy2ifbojqlygl4abm5h7ha:
-    resolution: {integrity: sha512-Ay4J0Gx6duE4KOx3/aDTJoec6SE6E9283LtCaM50uyiGDrS/P1H2ENAWV2OQp8X74lReh7sDsWM7vGsvYYHP5w==}
+  /@wagmi/chains/0.2.6_typescript@4.9.4:
+    resolution: {integrity: sha512-YRvWZ6G5X25BgLB8jCAz7Je3yUh+CvmXujrWnL/1lbXslheEq1Ssf77zRfdQo+zfD4bwL/qHEUNREf8r6usKsA==}
+    peerDependencies:
+      typescript: '>=4.9.4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 4.9.4
+    dev: false
+
+  /@wagmi/cli/0.1.5_sc5zqy2ifbojqlygl4abm5h7ha:
+    resolution: {integrity: sha512-HPkpPMBcRQUH23P9WpfXrQtBs+biaVuHSqnc5gq+8owNV/V0nMsMHtOQOLRpbjVbwim2q8ZEB7a9ep9sEzzlQg==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
-      '@wagmi/core': '>=0.8.10'
+      '@wagmi/core': '>=0.9'
       typescript: '>=4.9.4'
-      wagmi: '>=0.10.4'
+      wagmi: '>=0.11'
     peerDependenciesMeta:
       '@wagmi/core':
         optional: true
@@ -2472,7 +2483,7 @@ packages:
         optional: true
     dependencies:
       '@ethersproject/address': 5.7.0
-      '@wagmi/chains': 0.2.0_typescript@4.9.4
+      '@wagmi/chains': 0.2.6_typescript@4.9.4
       abitype: 0.3.0_4umapwpw55xijlh2mknjgcn4rq
       abort-controller: 3.0.0
       bundle-require: 3.1.2_esbuild@0.15.13

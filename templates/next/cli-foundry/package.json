@@ -14,7 +14,7 @@
     "wagmi": "wagmi generate"
   },
   "dependencies": {
-    "@wagmi/cli": "~0.1.2",
+    "@wagmi/cli": "~0.1.5",
     "ethers": "^5.7.2",
     "next": "^13.0.0",
     "react": "^18.2.0",
