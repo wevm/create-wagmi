@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.16
+
+### Patch Changes
+
+- 7ad50f1: Upgraded `@wagmi/cli`
+
 ## 0.1.15
 
 ### Patch Changes
