@@ -2,4 +2,4 @@
 'create-wagmi': patch
 ---
 
-Added .env to git ignore
+Added .env to .gitignore in templates.
