@@ -1,5 +1,12 @@
 # create-wagmi
 
+## 0.1.17
+
+### Patch Changes
+
+- 6eba01a: Updated wagmi to 0.12.
+- 3a0ab8c: Added .env to .gitignore in templates.
+
 ## 0.1.16
 
 ### Patch Changes
