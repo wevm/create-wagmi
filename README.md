@@ -40,10 +40,10 @@ yarn create wagmi --template next-connectkit
 **Vite (React)**
 
 - `vite-react`: A Vite (React) wagmi project.
-- `vite-react-cli-abi`: A Next.js wagmi project with `@wagmi/cli` set up
-- `vite-react-cli-erc`: A Next.js wagmi project with `@wagmi/cli` ERC Plugin set up
-- `vite-react-cli-etherscan`: A Next.js wagmi project with `@wagmi/cli` Etherscan Plugin set up
-- `vite-react-cli-foundry`: A Next.js wagmi project with `@wagmi/cli` Foundry Plugin set up
+- `vite-react-cli-abi`: A Vite wagmi project with `@wagmi/cli` set up
+- `vite-react-cli-erc`: A Vite wagmi project with `@wagmi/cli` ERC Plugin set up
+- `vite-react-cli-etherscan`: A Vite wagmi project with `@wagmi/cli` Etherscan Plugin set up
+- `vite-react-cli-foundry`: A Vite wagmi project with `@wagmi/cli` Foundry Plugin set up
 - `vite-react-connectkit`: A Vite (React) wagmi project with ConnectKit included.
 - `vite-react-rainbowkit`: A Vite (React) wagmi project with RainbowKit included.
 - `vite-react-web3modal`: A Vite (React) wagmi project with Web3Modal included.
