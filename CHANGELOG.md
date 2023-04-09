@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.18
+
+### Patch Changes
+
+- 12dcfe0: Updated wagmi to 0.12 in ConnectKit templates.
+
 ## 0.1.17
 
 ### Patch Changes
