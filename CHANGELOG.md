@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 0.1.19
+
+### Patch Changes
+
+- 1282f0e: Updated templates to use WalletConnect v2 by default
+
 ## 0.1.18
 
 ### Patch Changes
