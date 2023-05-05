@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18]
-        pnpm-version: [7.19]
+        node-version: [19]
+        pnpm-version: [8]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.2.4
@@ -51,8 +51,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18]
-        pnpm-version: [7.19]
+        node-version: [19]
+        pnpm-version: [8]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.2.4
