@@ -3,7 +3,7 @@ export type Context<TCtx> = {
   set: (val: Partial<TCtx>) => void
 }
 
-export type Hooks<TCtx> = {
+export type Hooks<TCtx = any> = {
   afterValidate?(opts: { context: Context<TCtx> }): Promise<void>
   beforeInstall?(opts: {
     context: Context<TCtx>
