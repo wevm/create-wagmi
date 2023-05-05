@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.0-next.0
+
+### Major Changes
+
+- e20e32c: Updated to wagmi v1.
+
 ## 0.1.19
 
 ### Patch Changes

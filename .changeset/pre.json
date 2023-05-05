@@ -15,5 +15,5 @@
     "wagmi-template-vite-with-rainbowkit": "0.0.1",
     "wagmi-template-vite-with-web3modal": "0.0.1"
   },
-  "changesets": []
+  "changesets": ["gentle-hotels-refuse"]
 }
