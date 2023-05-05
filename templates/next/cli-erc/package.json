@@ -10,12 +10,12 @@
     "wagmi": "wagmi generate"
   },
   "dependencies": {
-    "@wagmi/cli": "~0.1.5",
-    "ethers": "^5.7.2",
+    "@wagmi/cli": "1.0.0-next.7",
     "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wagmi": "~0.12.13"
+    "wagmi": "1.0.0-next.7",
+    "viem": "~0.3.17"
   },
   "devDependencies": {
     "@types/node": "^17.0.31",

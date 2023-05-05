@@ -1,4 +1,3 @@
-import { BigNumber } from 'ethers'
 import { useState } from 'react'
 import { useNetwork, useWaitForTransaction } from 'wagmi'
 
@@ -29,7 +28,7 @@ function SetNumber() {
   const [value, setValue] = useState('')
 
   const { config } = usePrepareCounterSetNumber({
-    args: value ? [BigNumber.from(value)] : undefined,
+    args: value ? [BigInt(value)] : undefined,
     enabled: Boolean(value),
   })
   const { data, write } = useCounterSetNumber({

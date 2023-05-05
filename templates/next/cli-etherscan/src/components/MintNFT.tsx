@@ -1,4 +1,3 @@
-import { BigNumber } from 'ethers'
 import { useState } from 'react'
 import { useWaitForTransaction } from 'wagmi'
 
@@ -15,7 +14,7 @@ export function MintNFT() {
     error: prepareError,
     isError: isPrepareError,
   } = usePrepareWagmiMintExampleMint({
-    args: tokenId ? [BigNumber.from(tokenId)] : undefined,
+    args: tokenId ? [BigInt(tokenId)] : undefined,
   })
   const { data, error, isError, write } = useWagmiMintExampleMint(config)
 
