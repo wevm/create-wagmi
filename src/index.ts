@@ -7,7 +7,6 @@ import { oraPromise } from 'ora'
 import pico from 'picocolors'
 import { default as prompts } from 'prompts'
 
-import rootPackageJson from '../package.json'
 import { Template } from './types'
 import {
   ValidationError,
@@ -20,6 +19,7 @@ import {
   validateTemplateName,
 } from './utils'
 import { getTemplateFramework } from './utils/templates'
+import rootPackageJson from '../package.json'
 import path from 'path'
 import { fileURLToPath } from 'url'
 

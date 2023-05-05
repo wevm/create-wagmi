@@ -1,11 +1,10 @@
 import pico from 'picocolors'
 import checkForUpdate from 'update-check'
 
+import { getPackageManager } from './getPackageManager'
 import { CLIOptions } from '..'
 
 import packageJson from '../../package.json'
-
-import { getPackageManager } from './getPackageManager'
 
 const log = console.log
 
