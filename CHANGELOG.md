@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.0-next.1
+
+### Patch Changes
+
+- update
+
 ## 1.0.0-next.0
 
 ### Major Changes

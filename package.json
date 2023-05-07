@@ -1,7 +1,7 @@
 {
   "name": "create-wagmi",
   "description": "Create wagmi apps with one command",
-  "version": "1.0.0-next.0",
+  "version": "1.0.0-next.1",
   "type": "module",
   "license": "MIT",
   "bin": {
