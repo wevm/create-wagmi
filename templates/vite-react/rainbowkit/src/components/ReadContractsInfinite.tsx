@@ -27,7 +27,7 @@ export function ReadContractsInfinite() {
           {data?.pages.map((data, i) => (
             <div key={i}>
               {data.flatMap((x) => (
-                <pre>{stringify(x)}</pre>
+                <pre key={stringify(x)}>{stringify(x)}</pre>
               ))}
             </div>
           ))}
