@@ -1,4 +1,7 @@
+'use client'
+
 import { useState } from 'react'
+import { BaseError } from 'viem'
 import { Address, useAccount, useNetwork, useWaitForTransaction } from 'wagmi'
 
 import {
@@ -133,7 +136,7 @@ function Allowance({
         </button>
         {isLoading && <ProcessingMessage hash={data?.hash} />}
         {isSuccess && <div>Success!</div>}
-        {isError && <div>Error: {error?.message}</div>}
+        {isError && <div>Error: {(error as BaseError)?.shortMessage}</div>}
       </div>
       <div>Allowance: {balance?.toString()}</div>
     </div>
@@ -173,7 +176,7 @@ function Transfer({ contractAddress }: { contractAddress: Address }) {
       </button>
       {isLoading && <ProcessingMessage hash={data?.hash} />}
       {isSuccess && <div>Success!</div>}
-      {isError && <div>Error: {error?.message}</div>}
+      {isError && <div>Error: {(error as BaseError)?.shortMessage}</div>}
     </div>
   )
 }

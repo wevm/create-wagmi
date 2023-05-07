@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { useNetwork, useWaitForTransaction } from 'wagmi'
 

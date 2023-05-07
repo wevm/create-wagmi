@@ -1,6 +1,9 @@
 import { useAccount } from 'wagmi'
 
-import { Account, Connect, MintNFT, NetworkSwitcher } from './components'
+import { Account } from './components/Account'
+import { Connect } from './components/Connect'
+import { MintNFT } from './components/MintNFT'
+import { NetworkSwitcher } from './components/NetworkSwitcher'
 
 export function App() {
   const { isConnected } = useAccount()

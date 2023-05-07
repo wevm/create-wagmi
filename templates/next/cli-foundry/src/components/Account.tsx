@@ -1,3 +1,5 @@
+'use client'
+
 import { useAccount, useEnsName } from 'wagmi'
 
 export function Account() {

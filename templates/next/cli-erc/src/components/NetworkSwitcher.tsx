@@ -1,3 +1,6 @@
+'use client'
+
+import { BaseError } from 'viem'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 
 export function NetworkSwitcher() {
@@ -25,7 +28,7 @@ export function NetworkSwitcher() {
         </div>
       )}
 
-      <div>{error && error.message}</div>
+      <div>{error && (error as BaseError).shortMessage}</div>
     </div>
   )
 }

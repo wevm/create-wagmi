@@ -109,9 +109,9 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -123,8 +123,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -149,9 +149,9 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -163,8 +163,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -189,9 +189,9 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -203,8 +203,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -229,9 +229,9 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -243,8 +243,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -269,12 +269,12 @@ importers:
     dependencies:
       connectkit:
         specifier: ^1.2.2
-        version: 1.2.3(ethers@5.7.2)(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)(wagmi@0.12.13)
+        version: 1.2.3(ethers@5.7.2)(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)(wagmi@1.0.0-next.9)
       ethers:
         specifier: ^5.7.0
         version: 5.7.2
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -282,9 +282,12 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      viem:
+        specifier: ~0.3.17
+        version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: ~0.12.13
-        version: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -308,7 +311,7 @@ importers:
   templates/next/default:
     dependencies:
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -320,8 +323,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -346,12 +349,12 @@ importers:
     dependencies:
       '@rainbow-me/rainbowkit':
         specifier: ~0.12.1
-        version: 0.12.12(@types/react@18.2.5)(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(wagmi@0.12.13)
+        version: 0.12.12(@types/react@18.2.5)(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(wagmi@1.0.0-next.9)
       ethers:
         specifier: ^5.7.0
         version: 5.7.2
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -359,9 +362,12 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      viem:
+        specifier: ~0.3.17
+        version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: ~0.12.13
-        version: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -394,7 +400,7 @@ importers:
         specifier: ^5.7.2
         version: 5.7.2
       next:
-        specifier: ^13.0.0
+        specifier: ^13.4.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
@@ -402,9 +408,12 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      viem:
+        specifier: ~0.3.17
+        version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: ~0.12.13
-        version: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/node':
         specifier: ^17.0.31
@@ -429,7 +438,7 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -449,8 +458,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -472,7 +481,7 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -492,8 +501,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -515,7 +524,7 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -535,8 +544,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -558,7 +567,7 @@ importers:
     dependencies:
       '@wagmi/cli':
         specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7)
+        version: 1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -578,8 +587,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -604,7 +613,7 @@ importers:
         version: 6.0.3
       connectkit:
         specifier: ^1.2.2
-        version: 1.2.3(ethers@5.7.2)(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)(wagmi@0.12.13)
+        version: 1.2.3(ethers@5.7.2)(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)(wagmi@1.0.0-next.9)
       ethers:
         specifier: ^5.7.2
         version: 5.7.2
@@ -621,8 +630,8 @@ importers:
         specifier: ^0.12.4
         version: 0.12.5
       wagmi:
-        specifier: ~0.12.13
-        version: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -661,8 +670,8 @@ importers:
         specifier: ~0.3.17
         version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: 1.0.0-next.7
-        version: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -684,7 +693,7 @@ importers:
     dependencies:
       '@rainbow-me/rainbowkit':
         specifier: ~0.12.1
-        version: 0.12.12(@types/react@18.2.5)(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(wagmi@0.12.13)
+        version: 0.12.12(@types/react@18.2.5)(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(wagmi@1.0.0-next.9)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -703,9 +712,12 @@ importers:
       util:
         specifier: ^0.12.4
         version: 0.12.5
+      viem:
+        specifier: 0.3.17
+        version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: ~0.12.13
-        version: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -749,9 +761,12 @@ importers:
       util:
         specifier: ^0.12.4
         version: 0.12.5
+      viem:
+        specifier: 0.3.17
+        version: 0.3.17(typescript@4.9.5)(zod@3.21.4)
       wagmi:
-        specifier: ~0.12.13
-        version: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        specifier: 1.0.0-next.9
+        version: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     devDependencies:
       '@types/react':
         specifier: ^18.0.9
@@ -2261,7 +2276,7 @@ packages:
     resolution: {integrity: sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==}
     dev: false
 
-  /@rainbow-me/rainbowkit@0.12.12(@types/react@18.2.5)(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(wagmi@0.12.13):
+  /@rainbow-me/rainbowkit@0.12.12(@types/react@18.2.5)(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(wagmi@1.0.0-next.9):
     resolution: {integrity: sha512-9PxYjX8Z/FOdYkzJe7BCa1qsr8hsdw8ZIOrQvB5EyolI1mdmKVIsPFTjXx85D6GY8v9P6Ax9elDDT/PdPPhgCw==}
     engines: {node: '>=12.4'}
     peerDependencies:
@@ -2279,7 +2294,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-remove-scroll: 2.5.4(@types/react@18.2.5)(react@18.2.0)
-      wagmi: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+      wagmi: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     transitivePeerDependencies:
       - '@types/react'
     dev: false
@@ -2889,7 +2904,7 @@ packages:
       typescript: 4.9.5
     dev: false
 
-  /@wagmi/cli@1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.7):
+  /@wagmi/cli@1.0.0-next.7(typescript@4.9.5)(wagmi@1.0.0-next.9):
     resolution: {integrity: sha512-29+zL82G8bdD2MeCeY51hpjS86gFCuvWJiiWzxOdH7qFYpcR0l2aMRzgy4kiLut9ELtlEEk4MnhP+Vzchd5yfQ==}
     engines: {node: '>=14'}
     hasBin: true
@@ -2928,7 +2943,7 @@ packages:
       prettier: 2.8.8
       typescript: 4.9.5
       viem: 0.3.17(typescript@4.9.5)(zod@3.21.4)
-      wagmi: 1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
+      wagmi: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
       zod: 3.21.4
     transitivePeerDependencies:
       - bufferutil
@@ -4292,7 +4307,7 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /connectkit@1.2.3(ethers@5.7.2)(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)(wagmi@0.12.13):
+  /connectkit@1.2.3(ethers@5.7.2)(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)(wagmi@1.0.0-next.9):
     resolution: {integrity: sha512-IZdfgbFMt0rPybJXmLSNDuvwFBF2Gh+9qjYxGN6EdWHPPKqXqdyOzrctQIHpr29JwqVT9jfsni2CNJPTSAjOsg==}
     engines: {node: '>=12.4'}
     peerDependencies:
@@ -4312,7 +4327,7 @@ packages:
       react-use-measure: 2.1.1(react-dom@18.2.0)(react@18.2.0)
       resize-observer-polyfill: 1.5.1
       styled-components: 5.3.10(react-dom@18.2.0)(react-is@16.13.1)(react@18.2.0)
-      wagmi: 0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
+      wagmi: 1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17)
     transitivePeerDependencies:
       - react-is
     dev: false
@@ -9053,41 +9068,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /wagmi@0.12.13(ethers@5.7.2)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5):
-    resolution: {integrity: sha512-1J+F68MztodPUo2OIFImiC3OoZD4gdryxTidfwQz9LJawXdBNmAOFvq0LQClrrqgFk0Gd3EoLo/MKGiEn2RsMg==}
-    peerDependencies:
-      ethers: '>=5.5.1 <6'
-      react: '>=17.0.0'
-      typescript: '>=4.9.4'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@tanstack/query-sync-storage-persister': 4.29.5
-      '@tanstack/react-query': 4.29.5(react-dom@18.2.0)(react@18.2.0)
-      '@tanstack/react-query-persist-client': 4.29.5(@tanstack/react-query@4.29.5)
-      '@wagmi/core': 0.10.11(ethers@5.7.2)(react@18.2.0)(typescript@4.9.5)
-      abitype: 0.3.0(typescript@4.9.5)
-      ethers: 5.7.2
-      react: 18.2.0
-      typescript: 4.9.5
-      use-sync-external-store: 1.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - '@react-native-async-storage/async-storage'
-      - bufferutil
-      - debug
-      - encoding
-      - immer
-      - lokijs
-      - react-dom
-      - react-native
-      - supports-color
-      - utf-8-validate
-      - zod
-    dev: false
-
-  /wagmi@1.0.0-next.7(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17):
-    resolution: {integrity: sha512-WxFC83vPakpgXVeHUKe07gFoaLdUKSzbmtzjUSEUsgUERAfMDTJAd9NvDF5O0+Ii+0QAIvoCXA55FKKtK5odMQ==}
+  /wagmi@1.0.0-next.9(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)(viem@0.3.17):
+    resolution: {integrity: sha512-8fxKXinUVVZNjmO0jrcntbB9E6Sylky893S+glx2rWt5Lwrce2HLDooCh2nmMehYbymx2r7fbsKOmAj3vmbDYw==}
     peerDependencies:
       react: '>=17.0.0'
       typescript: '>=4.9.4'

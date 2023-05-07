@@ -1,3 +1,5 @@
+'use client'
+
 import { useAccount, useEnsName } from 'wagmi'
 
 export function Account() {
@@ -5,9 +7,9 @@ export function Account() {
   const { data: ensName } = useEnsName({ address })
 
   return (
-    <p>
+    <div>
       {ensName ?? address}
       {ensName ? ` (${address})` : null}
-    </p>
+    </div>
   )
 }

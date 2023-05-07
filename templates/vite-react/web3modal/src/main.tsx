@@ -5,13 +5,13 @@ import * as ReactDOM from 'react-dom/client'
 import { WagmiConfig } from 'wagmi'
 
 import { App } from './App'
-import { chains, client, walletConnectProjectId } from './wagmi'
+import { chains, config, walletConnectProjectId } from './wagmi'
 
-const ethereumClient = new EthereumClient(client, chains)
+const ethereumClient = new EthereumClient(config, chains)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <WagmiConfig client={client}>
+    <WagmiConfig config={config}>
       <App />
       <Web3Modal
         projectId={walletConnectProjectId}
