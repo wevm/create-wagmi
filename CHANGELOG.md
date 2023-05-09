@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.2
+
+### Patch Changes
+
+- 3c65f77: Fixed Next.js default template title
+
 ## 1.0.0
 
 ### Major Changes
