@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.0
+
+### Major Changes
+
+- affc13e: Updated to wagmi v1.
+
 ## 0.1.19
 
 ### Patch Changes
