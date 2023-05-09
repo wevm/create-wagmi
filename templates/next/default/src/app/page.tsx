@@ -20,7 +20,7 @@ import { WriteContractPrepared } from '../components/WriteContractPrepared'
 export default function Page() {
   return (
     <div>
-      <h1>wagmi + Vite</h1>
+      <h1>wagmi + Next.js</h1>
       <Connect />
       <Connected>
         <hr />
