@@ -34,7 +34,7 @@ function getTemplates() {
     if (!fs.lstatSync(frameworkPath).isDirectory()) return
     if (!fs.existsSync(path.join(frameworkPath, '_meta.ts'))) {
       console.log(
-        pico.red(
+        pico.yellow(
           [
             `Unable to find \`_meta.ts\` for framework "${framework}".`,
             '',
@@ -55,11 +55,10 @@ function getTemplates() {
           ].join('\n'),
         ),
       )
-      process.exit(1)
+    } else {
+      frameworksSrc += `\n  '${framework}': () => import('../../templates/${framework}/_meta'),`
+      templatesSrc += `\n  '${framework}': {`
     }
-
-    frameworksSrc += `\n  '${framework}': () => import('../../templates/${framework}/_meta'),`
-    templatesSrc += `\n  '${framework}': {`
 
     const templates = fs.readdirSync(frameworkPath)
     templates.forEach((template) => {
@@ -67,7 +66,7 @@ function getTemplates() {
       if (!fs.lstatSync(templatePath).isDirectory()) return
       if (!fs.existsSync(path.join(templatePath, '_meta.ts'))) {
         console.log(
-          pico.red(
+          pico.yellow(
             [
               `Unable to find \`_meta.ts\` for template "${template}".`,
               '',
@@ -88,9 +87,9 @@ function getTemplates() {
             ].join('\n'),
           ),
         )
-        process.exit(1)
+      } else {
+        templatesSrc += `\n    '${template}': () => import('../../templates/${framework}/${template}/_meta'),`
       }
-      templatesSrc += `\n    '${template}': () => import('../../templates/${framework}/${template}/_meta'),`
     })
 
     templatesSrc += '\n  },'

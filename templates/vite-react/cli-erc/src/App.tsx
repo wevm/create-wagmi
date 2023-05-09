@@ -1,6 +1,9 @@
 import { useAccount } from 'wagmi'
 
-import { Account, Connect, ERC20, NetworkSwitcher } from './components'
+import { Account } from './components/Account'
+import { Connect } from './components/Connect'
+import { ERC20 } from './components/ERC20'
+import { NetworkSwitcher } from './components/NetworkSwitcher'
 
 export function App() {
   const { isConnected } = useAccount()

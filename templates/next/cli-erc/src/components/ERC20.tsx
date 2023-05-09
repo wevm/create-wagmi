@@ -1,5 +1,7 @@
-import { BigNumber } from 'ethers'
+'use client'
+
 import { useState } from 'react'
+import { BaseError } from 'viem'
 import { Address, useAccount, useNetwork, useWaitForTransaction } from 'wagmi'
 
 import {
@@ -95,7 +97,7 @@ function Allowance({
 
   const { config, error, isError } = usePrepareErc20Approve({
     address: contractAddress,
-    args: spender && amount ? [spender, BigNumber.from(amount)] : undefined,
+    args: spender && amount ? [spender, BigInt(amount)] : undefined,
     enabled: Boolean(spender && amount),
   })
   const { data, write } = useErc20Approve(config)
@@ -134,7 +136,7 @@ function Allowance({
         </button>
         {isLoading && <ProcessingMessage hash={data?.hash} />}
         {isSuccess && <div>Success!</div>}
-        {isError && <div>Error: {error?.message}</div>}
+        {isError && <div>Error: {(error as BaseError)?.shortMessage}</div>}
       </div>
       <div>Allowance: {balance?.toString()}</div>
     </div>
@@ -147,7 +149,7 @@ function Transfer({ contractAddress }: { contractAddress: Address }) {
 
   const { config, error, isError } = usePrepareErc20Transfer({
     address: contractAddress,
-    args: address && amount ? [address, BigNumber.from(amount)] : undefined,
+    args: address && amount ? [address, BigInt(amount)] : undefined,
     enabled: Boolean(address && amount),
   })
   const { data, write } = useErc20Transfer(config)
@@ -174,7 +176,7 @@ function Transfer({ contractAddress }: { contractAddress: Address }) {
       </button>
       {isLoading && <ProcessingMessage hash={data?.hash} />}
       {isSuccess && <div>Success!</div>}
-      {isError && <div>Error: {error?.message}</div>}
+      {isError && <div>Error: {(error as BaseError)?.shortMessage}</div>}
     </div>
   )
 }

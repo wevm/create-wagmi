@@ -1,4 +1,3 @@
-import { BigNumber } from 'ethers'
 import { useState } from 'react'
 import { Address, useAccount, useNetwork, useWaitForTransaction } from 'wagmi'
 
@@ -95,7 +94,7 @@ function Allowance({
 
   const { config, error, isError } = usePrepareErc20Approve({
     address: contractAddress,
-    args: spender && amount ? [spender, BigNumber.from(amount)] : undefined,
+    args: spender && amount ? [spender, BigInt(amount)] : undefined,
     enabled: Boolean(spender && amount),
   })
   const { data, write } = useErc20Approve(config)
@@ -147,7 +146,7 @@ function Transfer({ contractAddress }: { contractAddress: Address }) {
 
   const { config, error, isError } = usePrepareErc20Transfer({
     address: contractAddress,
-    args: address && amount ? [address, BigNumber.from(amount)] : undefined,
+    args: address && amount ? [address, BigInt(amount)] : undefined,
     enabled: Boolean(address && amount),
   })
   const { data, write } = useErc20Transfer(config)

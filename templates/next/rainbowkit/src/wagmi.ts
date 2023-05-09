@@ -1,9 +1,9 @@
 import { getDefaultWallets } from '@rainbow-me/rainbowkit'
-import { configureChains, createClient } from 'wagmi'
+import { configureChains, createConfig } from 'wagmi'
 import { goerli, mainnet } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 
-const { chains, provider, webSocketProvider } = configureChains(
+const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet, ...(process.env.NODE_ENV === 'development' ? [goerli] : [])],
   [publicProvider()],
 )
@@ -13,11 +13,11 @@ const { connectors } = getDefaultWallets({
   chains,
 })
 
-export const client = createClient({
+export const config = createConfig({
   autoConnect: true,
   connectors,
-  provider,
-  webSocketProvider,
+  publicClient,
+  webSocketPublicClient,
 })
 
 export { chains }

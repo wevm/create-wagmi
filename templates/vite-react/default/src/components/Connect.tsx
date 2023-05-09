@@ -1,3 +1,4 @@
+import { BaseError } from 'viem'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 export function Connect() {
@@ -25,7 +26,7 @@ export function Connect() {
           ))}
       </div>
 
-      {error && <div>{error.message}</div>}
+      {error && <div>{(error as BaseError).shortMessage}</div>}
     </div>
   )
 }
