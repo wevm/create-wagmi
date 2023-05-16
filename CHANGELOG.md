@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.3
+
+### Patch Changes
+
+- 00d9080: Added RainbowKit & Web3Modal wagmi v1 templates
+
 ## 1.0.2
 
 ### Patch Changes
