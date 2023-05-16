@@ -14,7 +14,7 @@ export const config = createConfig({
   connectors: w3mConnectors({
     chains,
     projectId: walletConnectProjectId,
-    version: 1,
+    version: 2,
   }),
   publicClient,
   webSocketPublicClient,

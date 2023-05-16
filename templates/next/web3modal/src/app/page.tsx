@@ -1,5 +1,3 @@
-import { Web3Button } from '@web3modal/react'
-
 import { Account } from '../components/Account'
 import { Balance } from '../components/Balance'
 import { BlockNumber } from '../components/BlockNumber'
@@ -15,6 +13,7 @@ import { SignTypedData } from '../components/SignTypedData'
 import { Token } from '../components/Token'
 import { WatchContractEvents } from '../components/WatchContractEvents'
 import { WatchPendingTransactions } from '../components/WatchPendingTransactions'
+import { Web3Button } from '../components/Web3Button'
 import { WriteContract } from '../components/WriteContract'
 import { WriteContractPrepared } from '../components/WriteContractPrepared'
 

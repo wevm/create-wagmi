@@ -13,7 +13,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = React.useState(false)
   React.useEffect(() => setMounted(true), [])
   return (
-    <WagmiConfig client={config}>
+    <WagmiConfig config={config}>
       {mounted && children}
       <Web3Modal
         projectId={walletConnectProjectId}
