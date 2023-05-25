@@ -1,8 +1,7 @@
-import { ConnectKitButton } from 'connectkit'
-
 import { Account } from '../components/Account'
 import { Balance } from '../components/Balance'
 import { BlockNumber } from '../components/BlockNumber'
+import { ConnectKitButton } from '../components/ConnectKitButton'
 import { Connected } from '../components/Connected'
 import { NetworkSwitcher } from '../components/NetworkSwitcher'
 import { ReadContract } from '../components/ReadContract'

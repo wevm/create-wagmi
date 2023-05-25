@@ -19,7 +19,7 @@ export const injectProviders = ({
 
     let src = fs.readFileSync(configPath).toString()
     src = src.replace(
-      /([\s\S]*getDefaultClient[\s\S]*)(\s\s}\),)([\s\S]*)/,
+      /([\s\S]*getDefaultConfig[\s\S]*)(\s\s}\),)([\s\S]*)/,
       (_, a, _b, c) => {
         return (
           a +

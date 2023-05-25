@@ -13,6 +13,6 @@ export default createTemplate({
       envNamespace: 'process.env',
       envPrefix: 'NEXT_PUBLIC_',
     }),
-    promptAndInjectProjectId(),
+    promptAndInjectProjectId({ required: true }),
   ]),
 })

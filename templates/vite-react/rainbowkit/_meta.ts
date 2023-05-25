@@ -13,6 +13,6 @@ export default createTemplate({
       envNamespace: 'process.env',
       envPrefix: 'VITE_',
     }),
-    promptAndInjectProjectId(),
+    promptAndInjectProjectId({ required: true }),
   ]),
 })
