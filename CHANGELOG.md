@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.4
+
+### Patch Changes
+
+- eb8dd9d: Updated wagmi & viem. Added ConnectKit template back in.
+
 ## 1.0.3
 
 ### Patch Changes
