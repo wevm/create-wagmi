@@ -4,7 +4,7 @@ import { Connected } from '../components/Connected'
 import { ERC20 } from '../components/ERC20'
 import { NetworkSwitcher } from '../components/NetworkSwitcher'
 
-export function Page() {
+export default function Page() {
   return (
     <>
       <h1>wagmi + Next.js + @wagmi/cli (ERC20)</h1>
@@ -21,5 +21,3 @@ export function Page() {
     </>
   )
 }
-
-export default Page
