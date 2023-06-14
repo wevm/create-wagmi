@@ -21,6 +21,6 @@
     "target": "ESNext",
     "types": ["node"]
   },
-  "include": ["src", "templates"],
+  "include": ["src", "templates", "tsup.config.ts"],
   "exclude": ["node_modules"]
 }
