@@ -26,7 +26,7 @@ export const promptAndInjectProjectId = ({
           )}\n` + (!required ? `${pico.cyan('⏎ to skip')}\n` : ''),
         type: 'text',
         validate: (id) => {
-          if (!id) return 'Project ID is required.'
+          if (!id && required) return 'Project ID is required.'
           return true
         },
       })
