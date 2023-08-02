@@ -1,5 +1,11 @@
 # create-wagmi
 
+## 1.0.5
+
+### Patch Changes
+
+- 6ba996f: Fixed optional WalletConnect Cloud Project ID prompt
+
 ## 1.0.4
 
 ### Patch Changes
