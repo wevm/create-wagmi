@@ -4,7 +4,7 @@ import { Connected } from '../components/Connected'
 import { MintNFT } from '../components/MintNFT'
 import { NetworkSwitcher } from '../components/NetworkSwitcher'
 
-export function Page() {
+export default function Page() {
   return (
     <>
       <h1>wagmi + Next.js + @wagmi/cli (Etherscan)</h1>
@@ -21,5 +21,3 @@ export function Page() {
     </>
   )
 }
-
-export default Page

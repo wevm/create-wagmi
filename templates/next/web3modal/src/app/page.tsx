@@ -17,7 +17,7 @@ import { Web3Button } from '../components/Web3Button'
 import { WriteContract } from '../components/WriteContract'
 import { WriteContractPrepared } from '../components/WriteContractPrepared'
 
-export function Page() {
+export default function Page() {
   return (
     <>
       <h1>wagmi + Web3Modal + Next.js</h1>
@@ -92,5 +92,3 @@ export function Page() {
     </>
   )
 }
-
-export default Page
