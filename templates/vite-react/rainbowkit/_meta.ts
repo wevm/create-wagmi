@@ -10,7 +10,7 @@ export default createTemplate({
   description: 'Vite (React) wagmi project with RainbowKit included',
   hooks: compose([
     selectAndInjectProviders({
-      envNamespace: 'process.env',
+      envNamespace: 'import.meta.env',
       envPrefix: 'VITE_',
     }),
     promptAndInjectProjectId({ required: true }),
